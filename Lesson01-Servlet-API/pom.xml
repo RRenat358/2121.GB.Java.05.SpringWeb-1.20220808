@@ -26,7 +26,8 @@
     </dependencies>
 
     <build>
-        <finalName>Lesson01-Servlet-API</finalName>
+<!--        <finalName>Lesson01-Servlet-API</finalName>-->
+        <finalName>servet-api</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

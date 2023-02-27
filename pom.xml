@@ -18,6 +18,7 @@
 
     <modules>
         <module>Lesson01-Servlet-API</module>
+        <module>Lesson02-Spring-Basics</module>
     </modules>
 
 </project>

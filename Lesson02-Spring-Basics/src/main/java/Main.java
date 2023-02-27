@@ -14,6 +14,13 @@ public class Main {
             String userName = scanner.nextLine();
 
             userRepository.insert(new User(userName));
+            System.out.println("New user has been added. Current users count: " + userRepository.findAll().size());
+
+            System.out.println("Enter \"end\" to exit);");
+            if (scanner.nextLine().equals("end")) {
+                return;
+            }
+
         }
     }
 

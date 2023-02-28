@@ -1,10 +1,11 @@
-import config.AppConfiguration;
+package ru.rrenat358;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import ru.rrenat358.config.AppConfiguration;
 import ru.rrenat358.persist.User;
-import ru.rrenat358.persist.UserRepository;
-import java.util.Scanner;
 
+import java.util.Scanner;
 
 public class Main {
 

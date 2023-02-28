@@ -5,9 +5,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
   http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-<!--    <bean id="userRepository" class="ru.rrenat358.persist.UserRepositoryImpl" />-->
+<!--    <bean id="userRepository" class="ru.titov.persist.ru.rrenat358.persist.UserRepositoryImpl" />-->
 
-<!--    <bean id="userService" class="ru.rrenat358.UserService" >-->
+<!--    <bean id="userService" class="ru.titov.ru.rrenat358.UserService" >-->
 <!--        <constructor-arg ref="userRepository" />-->
 <!--    </bean>-->
 

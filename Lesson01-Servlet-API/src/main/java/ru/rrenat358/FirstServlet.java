@@ -5,7 +5,6 @@ import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 
 @WebServlet(urlPatterns = "/")
-//@WebServlet("/")
 public class FirstServlet implements Servlet {
 
     private ServletConfig servletConfig;
@@ -23,7 +22,6 @@ public class FirstServlet implements Servlet {
     @Override
     public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
         servletResponse.getWriter().println("<h1>Hello world from our first servlet</h1>");
-
     }
 
     @Override

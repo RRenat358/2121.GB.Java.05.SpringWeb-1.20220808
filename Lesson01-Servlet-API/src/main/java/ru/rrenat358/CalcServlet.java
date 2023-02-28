@@ -28,5 +28,4 @@ public class CalcServlet extends HttpServlet {
         response.getWriter().println("<p>" + sum + "</p>");
         response.getWriter().println("<p>" + localDate.plusDays(1) + "</p>");
     }
-
 }

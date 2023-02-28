@@ -9,18 +9,14 @@ import javax.annotation.PostConstruct;
 @Service
 public class UserService {
 
-/*
     @Autowired
     @Qualifier("first")
-*/
     private UserRepository userRepository;
 
-/*
     @PostConstruct
     public void init() {
         System.out.println("Метод postConstruct отработал");
     }
-*/
 
 
     public void insert(User user) {
@@ -35,12 +31,10 @@ public class UserService {
         return this.userRepository.findAll().size();
     }
 
-/*
     @Autowired
     public void setUserRepository(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-*/
 
 
 }

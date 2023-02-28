@@ -1,8 +1,8 @@
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import ru.titov.persist.User;
-import ru.titov.persist.UserRepository;
+import ru.rrenat358.persist.User;
+import ru.rrenat358.persist.UserRepository;
 
 import javax.annotation.PostConstruct;
 

@@ -6,8 +6,11 @@ public class User {
 
     private String username;
 
-    public User(String username) {
+    private String role;
+
+    public User(String username, String role) {
         this.username = username;
+        this.role = role;
     }
 
     public Long getId() {
@@ -24,5 +27,13 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }

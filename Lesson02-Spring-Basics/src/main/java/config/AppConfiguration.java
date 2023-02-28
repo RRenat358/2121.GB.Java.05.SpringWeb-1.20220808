@@ -11,7 +11,7 @@ import ru.rrenat358.persist.UserRepositoryImpl;
 @ComponentScan("ru.rrenat358")
 public class AppConfiguration {
 
-    @Bean
+    /*@Bean
     public UserRepository userRepository() {
         return new UserRepositoryImpl();
     }
@@ -25,5 +25,5 @@ public class AppConfiguration {
     @Scope("prototype")
     public Cart cart() {
         return new Cart();
-    }
+    }*/
 }

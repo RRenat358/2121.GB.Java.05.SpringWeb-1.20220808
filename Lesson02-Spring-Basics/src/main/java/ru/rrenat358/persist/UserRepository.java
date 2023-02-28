@@ -6,32 +6,18 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class UserRepository {
+public interface UserRepository {
 
-    private final Map<Long, User> userMap = new ConcurrentHashMap<>();
+    List<User> findAll();
 
-    private final AtomicLong identity = new AtomicLong(0);
+    User findById(long id);
 
-    public List<User> findAll() {
-        return new ArrayList<>(userMap.values());
-    }
+    void insert(User user);
 
-    public User findById(long id) {
-        return userMap.get(id);
-    }
+    void update(User user);
 
-    public void insert(User user) {
-        long id = identity.incrementAndGet();
-        user.setId(id);
-        userMap.put(id, user);
-    }
+    void delete(long id);
 
-    public void update(User user) {
-        userMap.put(user.getId(), user);
-    }
-
-    public void delete(long id) {
-        userMap.remove(id);
-    }
+    long getCount();
 
 }

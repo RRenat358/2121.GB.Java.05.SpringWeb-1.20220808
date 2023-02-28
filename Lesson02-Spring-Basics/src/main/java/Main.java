@@ -6,21 +6,29 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        UserRepository userRepository = new UserRepository();
-        Scanner scanner = new Scanner(System.in);
+//        ApplicationContext context = new ClassPathXmlApplicationContext("spring-context.xml");
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfiguration.class);
+        UserService userService = context.getBean("userService", UserService.class);
+//        Cart cart1 = context.getBean("cart", Cart.class);
+//        Cart cart2 = context.getBean("cart", Cart.class);
+//        Cart cart3 = context.getBean("cart", Cart.class);
 
+        Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("Enter user name: ");
             String userName = scanner.nextLine();
 
-            userRepository.insert(new User(userName));
-            System.out.println("New user has been added. Current users count: " + userRepository.findAll().size());
+            System.out.println("Enter user role: ");
+            String role = scanner.nextLine();
 
-            System.out.println("Enter \"end\" to exit);");
+            userService.insert(new User(userName, role));
+
+            System.out.println("New user has been added. Current users count: " + userService.findAll());
+
+            System.out.println("Enter \"end\" to exit");
             if (scanner.nextLine().equals("end")) {
                 return;
             }
-
         }
     }
 

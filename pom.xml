@@ -14,10 +14,13 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <spring.version>5.3.25</spring.version>
     </properties>
 
     <modules>
         <module>Lesson01-Servlet-API</module>
+        <module>Lesson02-Spring-Basics</module>
     </modules>
 
 </project>

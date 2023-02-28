@@ -35,6 +35,4 @@ public class UserService {
     public void setUserRepository(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-
-
 }

@@ -3,8 +3,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import ru.rrenat358.persist.User;
 import ru.rrenat358.persist.UserRepository;
-
 import java.util.Scanner;
+
 
 public class Main {
 
@@ -34,6 +34,4 @@ public class Main {
             }
         }
     }
-
-
 }

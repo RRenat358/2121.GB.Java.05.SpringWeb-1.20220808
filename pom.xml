@@ -21,6 +21,7 @@
     <modules>
         <module>Lesson01-Servlet-API</module>
         <module>Lesson02-Spring-Basics</module>
+        <module>Lesson03-Spring-MVC</module>
     </modules>
 
     <dependencies>

@@ -11,5 +11,7 @@
 
     <artifactId>Lesson03-Spring-MVC</artifactId>
 
+    <packaging>war</packaging>
+
 
 </project>

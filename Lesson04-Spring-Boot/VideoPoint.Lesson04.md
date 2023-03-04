@@ -15,6 +15,7 @@ VideoPoint
 00-54-00 == docker   
 00-59-00 == copy [lesson03].java   
 01-00-00 == run from services 
+01-03-00 == debug 
 
 
  

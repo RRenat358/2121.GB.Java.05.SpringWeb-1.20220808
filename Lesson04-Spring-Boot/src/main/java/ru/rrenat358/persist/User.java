@@ -1,5 +1,10 @@
 package ru.rrenat358.persist;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class User {
 
     private Long id;

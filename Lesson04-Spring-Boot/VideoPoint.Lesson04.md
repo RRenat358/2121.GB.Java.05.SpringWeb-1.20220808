@@ -19,6 +19,10 @@ VideoPoint
 01-04-00 == logging  
 01-06-00 == @Slf4j  
 01-20-00 == docker  
+01-25-00 == email  
+01-30-00 == spring-boot-starter-validation</artifactId></dependency>  
+01-30-30 == @NotBlank  
+  
 
 
  

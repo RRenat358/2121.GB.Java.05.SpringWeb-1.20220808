@@ -44,6 +44,7 @@
                 <tr>
                     <th scope="col">Id</th>
                     <th scope="col">Username</th>
+                    <th scope="col">Email</th>
                     <th scope="col">Actions</th>
                 </tr>
                 </thead>
@@ -51,6 +52,7 @@
                 <tr th:each="user : ${users}">
                     <th scope="row" th:text="${user.id}">1</th>
                     <td th:text="${user.username}">Alex</td>
+                    <td th:text="${user.email}">some@mail.com</td>
                     <td>
                         <a class="btn btn-success" th:href="@{/user/{id}(id = ${user.id})}"><i class="fas fa-edit"></i></a>
                         <a class="btn btn-danger"  th:href="@{/user/delete/{id}(id = ${user.id})}"><i class="far fa-trash-alt"></i></a>

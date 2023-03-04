@@ -8,6 +8,8 @@ VideoPoint
 00-39-00 == pom.xml   
 00-42-20 ==    
 00-45-00 == .mvn   
+00-45-50 == application.properties   
+00-47-50 == terminal, .jar   
 
 
  

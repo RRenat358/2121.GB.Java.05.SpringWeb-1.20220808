@@ -14,8 +14,11 @@ VideoPoint
 00-52-00 == cmd   
 00-54-00 == docker   
 00-59-00 == copy [lesson03].java   
-01-00-00 == run from services 
-01-03-00 == debug 
+01-00-00 == run from services  
+01-03-00 == debug  
+01-04-00 == logging  
+01-06-00 == @Slf4j  
+01-20-00 == docker  
 
 
  

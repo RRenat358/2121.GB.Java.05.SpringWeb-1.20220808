@@ -1,6 +1,7 @@
 package ru.rrenat358.contoller;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import ru.rrenat358.persist.User;
 import ru.rrenat358.persist.UserRepository;
 
+@Slf4j
 @Controller
 @RequestMapping("/user")
 @RequiredArgsConstructor
@@ -43,6 +45,7 @@ public class UserController {
 
     @PostMapping
     public String saveUser(User user) {
+        log.info("method saveUser was hit ==");
         userRepository.save(user);
         return "redirect:/user";
     }

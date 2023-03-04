@@ -13,7 +13,8 @@ VideoPoint
 00-47-50 == IDEA Services   
 00-52-00 == cmd   
 00-54-00 == docker   
-00-59-00 == copy l03   
+00-59-00 == copy [lesson03].java   
+01-00-00 == run from services 
 
 
  

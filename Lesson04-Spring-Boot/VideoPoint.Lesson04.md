@@ -22,6 +22,7 @@ VideoPoint
 01-25-00 == email  
 01-30-00 == spring-boot-starter-validation</artifactId></dependency>  
 01-30-30 == @NotBlank  
+01-30-30 == @Pattern (Password)  
   
 
 

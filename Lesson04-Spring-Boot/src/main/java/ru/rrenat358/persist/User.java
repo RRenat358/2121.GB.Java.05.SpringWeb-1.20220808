@@ -19,12 +19,14 @@ public class User {
     @Email
     private String email;
 
-//    @Pattern(regexp = "^(?=.*?[0-9])(?=.*?[A-Z]).{8,}$", message = "Password too simple")
+    //Минимум восемь символов, минимум одна заглавная буква, одна строчная буква и одна цифра:
+//    @Pattern(regexp = "^(?=.*?[0-9])(?=.*?[A-Z]).{2,}$", message = "Password too simple")
+    //Минимум восемь символов, минимум одна буква, одна цифра и один специальный символ:
 //    @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*?)[A-Za-z?]{8,}$", message = "Password too simple")
-    @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*?)(?=.*[@$!%*#?&])[A-Za-z?@$!%*#?&]{8,}$", message = "Password too simple")
+//    @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*?)(?=.*[@$!%*#?&])[A-Za-z?@$!%*#?&]{8,}$", message = "Password too simple")
     private String password;
 
-
+    private String matchingPassword;
 
 
 

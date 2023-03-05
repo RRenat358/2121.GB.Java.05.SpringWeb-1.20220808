@@ -12,7 +12,7 @@ VideoPoint
 00-36-00 == Optional<T>   
 00-40-30 == ExceptionHandler   
 00-43-00 == .ElseTrow(()-> new EntityNotFountException)   
-00-45-00 == .ElseTrow(()-> new EntityNotFountException)   
+00-45-00 == Hibernate   
 
   
 

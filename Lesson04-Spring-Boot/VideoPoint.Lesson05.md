@@ -6,6 +6,7 @@ VideoPoint
 00-15-00 == Postman   
 00-22-00 == send json data for postman   
 00-26-50 ==    
+00-29-00 == кастомные параметры с помощью тимлифа   
 
   
 

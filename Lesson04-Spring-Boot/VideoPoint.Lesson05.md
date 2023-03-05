@@ -13,8 +13,13 @@ VideoPoint
 00-40-30 == ExceptionHandler   
 00-43-00 == .ElseTrow(()-> new EntityNotFountException)   
 00-45-00 == Hibernate   
+00-51-00 == MySQL & Docker   
+00-53-00 == MySQL   
+00-53-00 == hibernate.cfg.xml   
+01-05-00 == Connect to DB   
+01-18-00 ==    
 
-  
+
 
 
  

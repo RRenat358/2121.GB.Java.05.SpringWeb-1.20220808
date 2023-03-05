@@ -25,7 +25,8 @@ VideoPoint
 01-30-30 == @Pattern (Password)  
 01-56-30 == HomeWork04  
 01-59-00 == Deploy .jar  
-02-05-00 == install jdk for ubuntu 
+02-05-00 == install jdk for ubuntu in server.reg.ru  
+02-05-00 == install .jar service  
   
 
 

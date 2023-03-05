@@ -22,7 +22,7 @@
         <module>Lesson01-Servlet-API</module>
         <module>Lesson02-Spring-Basics</module>
         <module>Lesson03-Spring-MVC</module>
-<!--        <module>Lesson04-Spring-Boot</module>-->
+        <module>Lesson04-Spring-Boot</module>
     </modules>
 
     <dependencies>

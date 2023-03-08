@@ -4,6 +4,8 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import org.hibernate.cfg.Configuration;
 import ru.rrenat358.model.User;
+
+import java.util.List;
 //import org.hibernate.cfg.Configuration;
 
 public class Main {
@@ -11,28 +13,38 @@ public class Main {
 
         System.out.println("==============================");
         System.out.println("=== Start \"hibernate.cnf.xml\" === ");
+
         EntityManagerFactory entityManagerFactory = new Configuration()
                 .configure("hibernate.cfg.xml")
                 .buildSessionFactory();
+
+
         System.out.println("==============================");
+        System.out.println("=== Query === ");
+
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-        entityManager.getTransaction().begin();
+        //INSERT
+//        entityManager.getTransaction().begin();
+//
+//        entityManager.persist(new User("User1", "1"));
+//        entityManager.persist(new User("User2", "2"));
+//        entityManager.persist(new User("User3", "3"));
+//
+//        entityManager.getTransaction().commit();
 
-        entityManager.persist(new User("User1", "1"));
-        entityManager.persist(new User("User2", "2"));
-        entityManager.persist(new User("User3", "3"));
+        //SELECT
+//        User user = entityManager.find(User.class, 2L);
 
-
-
-
-        entityManager.getTransaction().commit();
-
+        //JPQL, HQL
+        List<User> users = entityManager
+                .createQuery("select u from User u", User.class)
+                .getResultList();
+        for (User userFromDB : users) {
+            System.out.println(userFromDB);
+        }
 
 
         entityManagerFactory.close();
-
-
-
     }
 }

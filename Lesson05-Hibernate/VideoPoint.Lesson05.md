@@ -19,6 +19,7 @@ VideoPoint
 01-05-00 == Connect to DB   
 01-18-00 ==    
 01-21-00 == EntityManagerFactory, connect to DB   
+01-22-00 == connected to DB   
 
 
 

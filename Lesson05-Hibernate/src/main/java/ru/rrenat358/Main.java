@@ -1,10 +1,21 @@
 package ru.rrenat358;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
 import org.hibernate.cfg.Configuration;
+//import org.hibernate.cfg.Configuration;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
-        new Configuration();
+
+        EntityManagerFactory entityManagerFactory = new Configuration()
+                .configure("hibernate.cnf.xml")
+                .buildSessionFactory();
+        System.out.println(" configure(\"hibernate.cnf.xml\") ");
+
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+
+
     }
 }

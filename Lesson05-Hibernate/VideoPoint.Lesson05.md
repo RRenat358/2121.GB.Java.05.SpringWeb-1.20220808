@@ -18,6 +18,7 @@ VideoPoint
 00-53-00 == hibernate.cfg.xml   
 01-05-00 == Connect to DB   
 01-18-00 ==    
+01-21-00 == EntityManagerFactory, connect to DB   
 
 
 

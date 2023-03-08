@@ -21,6 +21,10 @@ VideoPoint
 01-21-00 == EntityManagerFactory, connect to DB   
 01-22-00 == connected to DB   
 01-25-00 == class User, table "users"   
+01-28-30 == Hibernate: create table users (...)    
+01-31-00 == install MySQL, ...    
+01-35-00 == запись с entityManager.getTransaction().begin();    
+01-37-30 == как получать данные с помощью Hibernate    
 
 
 

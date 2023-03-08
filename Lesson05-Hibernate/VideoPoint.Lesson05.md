@@ -25,6 +25,8 @@ VideoPoint
 01-31-00 == install MySQL, ...    
 01-35-00 == запись с entityManager.getTransaction().begin();    
 01-37-30 == как получать данные с помощью Hibernate    
+01-42-00 ==     
+01-45-30 == update    
 
 
 

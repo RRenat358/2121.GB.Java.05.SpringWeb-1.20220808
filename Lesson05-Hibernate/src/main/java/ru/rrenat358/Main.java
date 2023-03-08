@@ -38,7 +38,7 @@ public class Main {
 
         //JPQL, HQL
         List<User> users = entityManager
-                .createQuery("select u from User u", User.class)
+                .createQuery("select u from User u where u.id in (2, 3)", User.class)
                 .getResultList();
         for (User userFromDB : users) {
             System.out.println(userFromDB);

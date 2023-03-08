@@ -14,6 +14,7 @@ public class Main {
         System.out.println(" configure(\"hibernate.cnf.xml\") ");
 
         EntityManager entityManager = entityManagerFactory.createEntityManager();
+        entityManagerFactory.close();
 
 
 

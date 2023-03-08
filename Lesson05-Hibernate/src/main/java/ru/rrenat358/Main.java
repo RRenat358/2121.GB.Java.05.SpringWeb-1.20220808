@@ -24,6 +24,7 @@ public class Main {
 
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
+        //==============================
         //INSERT
 //        entityManager.getTransaction().begin();
 //
@@ -33,18 +34,57 @@ public class Main {
 //
 //        entityManager.getTransaction().commit();
 
+        //==============================
         //SELECT
 //        User user = entityManager.find(User.class, 2L);
 
         //JPQL, HQL
-        List<User> users = entityManager
-                .createQuery("select u from User u where u.id in (2, 3)", User.class)
-                .getResultList();
-        for (User userFromDB : users) {
-            System.out.println(userFromDB);
-        }
+//        List<User> users = entityManager
+//                .createQuery("select u from User u where u.id in (2, 3)", User.class)
+//                .getResultList();
+//        for (User userFromDB : users) {
+//            System.out.println(userFromDB);
+//        }
+
+        //==============================
+        //UPDATE
+//        entityManager.getTransaction().begin();
+//
+//        User user = entityManager.find(User.class, 2L);
+//        user.setUsername("User2 NEW");
+//
+//        entityManager.getTransaction().commit();
 
 
+        entityManager.getTransaction().begin();
+
+        //===
+        User user = new User("User3 NEW", "333");
+        user.setId(3L);
+        entityManager.merge(user);
+
+        entityManager.getTransaction().commit();
+
+
+        //==============================
+        // DELETE
+//        entityManager.getTransaction().begin();
+//
+//        User user = entityManager.find(User.class, 2L);
+////        entityManager.createQuery("delete from User u where u.id = 3").executeUpdate();
+//        entityManager.remove(user);
+//
+//        entityManager.getTransaction().commit();
+
+        Object singleResult = entityManager.createNativeQuery("""
+                            select u.id as userId
+                            from users u
+                            where u.username like '%brain%'
+                """, String.class).getSingleResult();
+
+
+        //==============================
+        entityManager.close();
         entityManagerFactory.close();
     }
 }

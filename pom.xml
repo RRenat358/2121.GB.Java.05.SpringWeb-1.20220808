@@ -23,6 +23,7 @@
         <module>Lesson02-Spring-Basics</module>
         <module>Lesson03-Spring-MVC</module>
         <module>Lesson04-Spring-Boot</module>
+        <module>Lesson05-Hibernate</module>
     </modules>
 
     <dependencies>

@@ -55,7 +55,9 @@
                     <td th:text="${user.email}">some@mail.com</td>
                     <td>
                         <a class="btn btn-success" th:href="@{/user/{id}(id = ${user.id})}"><i class="fas fa-edit"></i></a>
-                        <a class="btn btn-danger"  th:href="@{/user/delete/{id}(id = ${user.id})}"><i class="far fa-trash-alt"></i></a>
+                        <form class="d-inline" th:method="delete" th:action="@{/user/{id}/(id = ${user.id})}">
+                            <button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                        </form>
                     </td>
                 </tr>
                 </tbody>

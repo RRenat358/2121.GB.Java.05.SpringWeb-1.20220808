@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
 
         EntityManagerFactory entityManagerFactory = new Configuration()
-                .configure("hibernate.cnf.xml")
+                .configure("hibernate.cfg.xml")
                 .buildSessionFactory();
         System.out.println(" configure(\"hibernate.cnf.xml\") ");
 

@@ -32,6 +32,9 @@ VideoPoint
 02-04-30 == debug, evaluate    
 02-06-00 == ответы на вопросы    
 02-08-40 == HomeWork05    
+02-15-40 == IDEA Community Edition    
+02-17-00 == как исправить коммиты не в ту ветку    
+02-21-00 == debug, breakpoints    
 
 
 

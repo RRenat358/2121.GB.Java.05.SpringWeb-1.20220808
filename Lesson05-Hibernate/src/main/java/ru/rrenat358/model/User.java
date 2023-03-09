@@ -1,6 +1,19 @@
 package ru.rrenat358.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -28,38 +41,29 @@ public class User {
     @Column(nullable = false, unique = true)
     private String username;
 
-//    @OneToMany(mappedBy = "user",
-//            cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE},
-//            orphanRemoval = true)
-//    private List<Contact> contacts;
+    @OneToMany(mappedBy = "user",
+            cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE},
+            orphanRemoval = true)
+    private List<Contact> contacts;
 
     @Column(nullable = false, length = 1024)
     private String password;
 
-//    @OneToOne(mappedBy = "user",
-//            cascade = {CascadeType.ALL},
-//            orphanRemoval = true,
-//            fetch = FetchType.LAZY)
-//    private Customer customer;
+    @OneToOne(mappedBy = "user",
+            cascade = {CascadeType.ALL},
+            orphanRemoval = true,
+            fetch = FetchType.LAZY)
+    private Customer customer;
 
-//    @ManyToMany(mappedBy = "users")
-//    private List<Role> roles;
+    @ManyToMany(mappedBy = "users")
+    private List<Role> roles;
 
-        public User(String username, String password) {
+    @Embedded
+    private Passport passport;
+
+    public User(String username, List<Contact> contacts, String password) {
         this.username = username;
-//        this.contacts = contacts;
+        this.contacts = contacts;
         this.password = password;
     }
-
-
-//    @Embedded
-//    private Passport passport;
-//
-//    public User(String username, List<Contact> contacts, String password) {
-//        this.username = username;
-//        this.contacts = contacts;
-//        this.password = password;
-//    }
-
-
 }

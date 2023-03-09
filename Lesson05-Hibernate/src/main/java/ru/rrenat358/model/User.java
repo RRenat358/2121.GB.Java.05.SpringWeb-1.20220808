@@ -49,17 +49,17 @@ public class User {
     @Column(nullable = false, length = 1024)
     private String password;
 
-    @OneToOne(mappedBy = "user",
-            cascade = {CascadeType.ALL},
-            orphanRemoval = true,
-            fetch = FetchType.LAZY)
-    private Customer customer;
-
-    @ManyToMany(mappedBy = "users")
-    private List<Role> roles;
-
-    @Embedded
-    private Passport passport;
+//    @OneToOne(mappedBy = "user",
+//            cascade = {CascadeType.ALL},
+//            orphanRemoval = true,
+//            fetch = FetchType.LAZY)
+//    private Customer customer;
+//
+//    @ManyToMany(mappedBy = "users")
+//    private List<Role> roles;
+//
+//    @Embedded
+//    private Passport passport;
 
     public User(String username, List<Contact> contacts, String password) {
         this.username = username;

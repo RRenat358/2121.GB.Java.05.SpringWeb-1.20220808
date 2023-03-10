@@ -66,4 +66,14 @@ public class User {
         this.contacts = contacts;
         this.password = password;
     }
+
+    public User(String username, String password) {
+        this.username = username;
+        this.contacts = contacts;
+        this.password = password;
+    }
+
+    public User(String user3, String s, String pass3) {
+
+    }
 }

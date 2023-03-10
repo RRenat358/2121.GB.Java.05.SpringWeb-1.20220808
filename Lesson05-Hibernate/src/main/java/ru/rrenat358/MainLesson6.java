@@ -38,7 +38,7 @@ public class MainLesson6 {
 //        user2.setPassport(passport2);
 
 //
-//        firstUserContactList.forEach(contact -> contact.setUser(user));
+        firstUserContactList.forEach(contact -> contact.setUser(user));
 //        secondUserContactList.forEach(contact -> contact.setUser(user2));
 //
         entityManager.getTransaction().begin();

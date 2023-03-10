@@ -25,12 +25,12 @@ public class MainLesson6 {
         Contact email = new Contact(ContactType.HOME_EMAIL, "email@mail.com");
         List<Contact> firstUserContactList = Arrays.asList(mobile, email);
 
-//        Contact mobile2 = new Contact(ContactType.MOBILE_PHONE, "456");
-//        Contact email2 = new Contact(ContactType.HOME_EMAIL, "email3222@mail.com");
-//        List<Contact> secondUserContactList = Arrays.asList(mobile2, email2);
+        Contact mobile2 = new Contact(ContactType.MOBILE_PHONE, "456");
+        Contact email2 = new Contact(ContactType.HOME_EMAIL, "email3222@mail.com");
+        List<Contact> secondUserContactList = Arrays.asList(mobile2, email2);
 
         User user = new User("User1", firstUserContactList, "pass1");
-//        User user2 = new User("User2", secondUserContactList, "pass2");
+        User user2 = new User("User2", secondUserContactList, "pass2");
 ////        User user3 = new User("User3", firstUserContactList, "pass2");
 //        Passport passport = new Passport("1234", "123", "RUVD", Instant.now());
 //        Passport passport2 = new Passport("1234", "123", "RUVD", Instant.now());
@@ -38,17 +38,17 @@ public class MainLesson6 {
 //        user2.setPassport(passport2);
 
 //
-        firstUserContactList.forEach(contact -> contact.setUser(user));
-//        secondUserContactList.forEach(contact -> contact.setUser(user2));
-//
         entityManager.getTransaction().begin();
-        entityManager.persist(user);
+        firstUserContactList.forEach(contact -> contact.setUser(user));
+        secondUserContactList.forEach(contact -> contact.setUser(user2));
+//
+        user2.setId(2L);
+        entityManager.merge(user2);
+//        entityManager.persist(user);
 //        entityManager.persist(user2);
         entityManager.getTransaction().commit();
 
 
-////        user2.setId(2L);
-////        entityManager.merge(user2);
 //
 ////        List<User> users = entityManager.createNamedQuery("findAllUsers", User.class).getResultList();
 //

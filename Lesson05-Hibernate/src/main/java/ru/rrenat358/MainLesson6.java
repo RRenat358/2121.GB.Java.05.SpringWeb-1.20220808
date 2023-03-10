@@ -37,21 +37,31 @@ public class MainLesson6 {
 //        user.setPassport(passport);
 //        user2.setPassport(passport2);
 
-//
-        entityManager.getTransaction().begin();
-        firstUserContactList.forEach(contact -> contact.setUser(user));
-        secondUserContactList.forEach(contact -> contact.setUser(user2));
-//
-        user2.setId(2L);
-        entityManager.merge(user2);
+
+
+//        entityManager.getTransaction().begin();
+//        firstUserContactList.forEach(contact -> contact.setUser(user));
+//        secondUserContactList.forEach(contact -> contact.setUser(user2));
+//        user2.setId(2L);
+//        entityManager.merge(user2);
 //        entityManager.persist(user);
 //        entityManager.persist(user2);
+//        entityManager.getTransaction().commit();
+
+
+
+        entityManager.getTransaction().begin();
+
+        List<User> users = entityManager.createNamedQuery("findAllUsers", User.class).getResultList();
+
+        List<Contact> contacts = users.get(0).getContacts();
+
+        for (User user1 : users) {
+            user1.getContacts().forEach(System.out::println);
+        }
         entityManager.getTransaction().commit();
 
 
-//
-////        List<User> users = entityManager.createNamedQuery("findAllUsers", User.class).getResultList();
-//
 //        List<User> users = entityManager.createQuery("""
 //                        select u from User u
 //                        where (u.username like :usernameFilter)

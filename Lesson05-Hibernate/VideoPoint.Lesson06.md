@@ -33,6 +33,7 @@ VideoPoint
 01-56-40 == @Embedded  
 01-57-40 == @Embedded  
 02-02-00 == @AttributeOverride  
+02-04-21 == @OneToOne  
    
 
 

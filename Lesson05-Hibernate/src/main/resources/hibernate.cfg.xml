@@ -17,7 +17,7 @@
 
         <mapping class="ru.rrenat358.model.User"/>
         <mapping class="ru.rrenat358.model.Contact"/>
-<!--        <mapping class="ru.rrenat358.model.Customer"/>-->
+        <mapping class="ru.rrenat358.model.Customer"/>
 <!--        <mapping class="ru.rrenat358.model.Role"/>-->
 <!--        <mapping class="ru.rrenat358.model.LineItem"/>-->
 <!--        <mapping class="ru.rrenat358.model.Product"/>-->

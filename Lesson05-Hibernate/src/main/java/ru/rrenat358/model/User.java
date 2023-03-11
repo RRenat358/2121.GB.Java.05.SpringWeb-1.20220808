@@ -40,14 +40,14 @@ public class User {
 //    @ElementCollection
 //    private List<Long> ordersIds;
 
-//    @OneToOne(mappedBy = "user",
-//            cascade = {CascadeType.ALL},
-//            orphanRemoval = true,
-//            fetch = FetchType.LAZY)
-//    private Customer customer;
-//
-//    @ManyToMany(mappedBy = "users")
-//    private List<Role> roles;
+    @OneToOne(mappedBy = "user",
+            cascade = {CascadeType.ALL},
+            orphanRemoval = true,
+            fetch = FetchType.LAZY)
+    private Customer customer;
+
+    @ManyToMany(mappedBy = "users")
+    private List<Role> roles;
 
     @Embedded
     @AttributeOverride(name = "otherDate", column = @Column(name = "issuedDate"))

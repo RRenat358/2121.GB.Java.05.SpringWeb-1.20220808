@@ -26,14 +26,15 @@ public class MainLesson6 {
 
 
         //==============================//==============================
-        Contact mobile = new Contact(ContactType.MOBILE_PHONE, "123");
-        Contact email = new Contact(ContactType.HOME_EMAIL, "email@mail.com");
-        List<Contact> firstUserContactList = Arrays.asList(mobile, email);
+//        Contact mobile = new Contact(ContactType.MOBILE_PHONE, "123");
+//        Contact email = new Contact(ContactType.HOME_EMAIL, "email@mail.com");
+//        List<Contact> firstUserContactList = Arrays.asList(mobile, email);
+//
+//        Contact mobile2 = new Contact(ContactType.MOBILE_PHONE, "456");
+//        Contact email2 = new Contact(ContactType.HOME_EMAIL, "email3222@mail.com");
+//        List<Contact> secondUserContactList = Arrays.asList(mobile2, email2);
 
-        Contact mobile2 = new Contact(ContactType.MOBILE_PHONE, "456");
-        Contact email2 = new Contact(ContactType.HOME_EMAIL, "email3222@mail.com");
-        List<Contact> secondUserContactList = Arrays.asList(mobile2, email2);
-
+        //==============================
 //        User user = new User("User1", firstUserContactList, "pass1");
 //        User user2 = new User("User2", secondUserContactList, "pass2");
 
@@ -48,12 +49,12 @@ public class MainLesson6 {
 //        entityManager.persist(user3);
 //        entityManager.getTransaction().commit();
 
-        User user31 = new User("User31", firstUserContactList, "pass31");
-        Passport passport31 = new Passport("31313", "31311", "RUVD31", Instant.now());
-        user31.setPassport(passport31);
-        entityManager.getTransaction().begin();
-        entityManager.persist(user31);
-        entityManager.getTransaction().commit();
+//        User user31 = new User("User31", firstUserContactList, "pass31");
+//        Passport passport31 = new Passport("31313", "31311", "RUVD31", Instant.now());
+//        user31.setPassport(passport31);
+//        entityManager.getTransaction().begin();
+//        entityManager.persist(user31);
+//        entityManager.getTransaction().commit();
 
         //==============================//==============================
         //INSERT

@@ -38,6 +38,9 @@ VideoPoint
 02-09-00 == @ManyToMany  
 02-11-00 == @ManyToMany( **mappedBy** = "users")  
 02-12-00 == cascade = {CascadeType.ALL}  
+02-14-00 == HomeWork06  
+02-15-00 == @OneToOne *.LAZY  
+02-15-30 == HomeWork06  
    
 
 

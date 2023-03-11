@@ -4,6 +4,9 @@ VideoPoint
 Spring Data
 ---
 
+---  
+in module Lesson04-Spring-Boot  
+↓  
 00-11-00 ==   
 00-13-00 == created tables   
 00-13-30 == CascadeType.REMOVE   
@@ -20,16 +23,29 @@ Spring Data
 01-03-00 == перерыв   
 01-13-00 == Dialect   
 01-16-00 == Spring Data   
-goto module Lesson04-Spring-Boot
+↓
+---  
+goto module Lesson04-Spring-Boot  
+↓  
 01-18-00 == pom   
+01-19-00 == application.properties   
+
+
+
 
  
+
+
    
 
 
 
 
- 
-
-
+\
+\
+\
+\
+\
+\
+\
 

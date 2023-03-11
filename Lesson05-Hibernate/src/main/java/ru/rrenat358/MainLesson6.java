@@ -65,7 +65,6 @@ public class MainLesson6 {
 //        entityManager.getTransaction().commit();
 
 
-
         //==============================
         //SELECT
 //        entityManager.getTransaction().begin();
@@ -78,6 +77,25 @@ public class MainLesson6 {
 //            user1.getContacts().forEach(System.out::println);
 //        }
 //        entityManager.getTransaction().commit();
+
+        //==============================
+        //SELECT
+        entityManager.getTransaction().begin();
+
+//        List<User> users = entityManager.createNamedQuery("findAllUsers", User.class).getResultList();
+
+        List<User> users = entityManager.createQuery("""
+                SELECT u FROM User u
+                JOIN FETCH u.contacts
+                """, User.class)
+                .getResultList();
+
+        List<Contact> contacts = users.get(0).getContacts();
+
+        for (User user1 : users) {
+            user1.getContacts().forEach(System.out::println);
+        }
+        entityManager.getTransaction().commit();
 
 
         //==============================//==============================

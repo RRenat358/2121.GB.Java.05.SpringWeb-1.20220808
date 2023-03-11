@@ -29,7 +29,8 @@ public class User {
     private String username;
 
     @OneToMany(mappedBy = "user",
-            cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE},
+//            cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE},
+            cascade = {CascadeType.ALL},
             orphanRemoval = true/*, fetch = FetchType.EAGER*/)
     private List<Contact> contacts;
 

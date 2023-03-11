@@ -34,6 +34,10 @@ VideoPoint
 01-57-40 == @Embedded  
 02-02-00 == @AttributeOverride  
 02-04-21 == @OneToOne  
+02-06-00 == @ManyToMany  
+02-09-00 == @ManyToMany  
+02-11-00 == @ManyToMany( **mappedBy** = "users")  
+02-12-00 == cascade = {CascadeType.ALL}  
    
 
 

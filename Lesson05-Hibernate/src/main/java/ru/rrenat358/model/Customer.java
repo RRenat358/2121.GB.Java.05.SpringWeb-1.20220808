@@ -21,8 +21,8 @@ public class Customer {
     @OneToOne
     private User user;
 
-    @ManyToMany(mappedBy = "customer")
-    private List<Product> productsList;
+//    @ManyToMany(mappedBy = "customer")
+//    private List<Product> productsList;
 
     @OneToMany(mappedBy = "customer")
     private List<LineItem> products;

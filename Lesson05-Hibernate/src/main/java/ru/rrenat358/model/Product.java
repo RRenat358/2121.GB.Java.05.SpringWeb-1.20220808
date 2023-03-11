@@ -32,10 +32,10 @@ public class Product {
     @Column(nullable = false)
     private BigDecimal price;
 
-    @ManyToMany
-    private List<Customer> customer;
+//    @ManyToMany
+//    private List<Customer> customer;
 
-    @OneToMany
+    @OneToMany(mappedBy = "product")
     private List<LineItem> lineItem;
 
 }

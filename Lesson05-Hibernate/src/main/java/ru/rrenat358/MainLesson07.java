@@ -54,15 +54,15 @@ public class MainLesson07 {
         //==============================//==============================
 
         //REMOVE
-        entityManager.getTransaction().begin();
-
-        User user = entityManager.find(User.class, 2L);
-//        entityManager.remove(user);
-
-        user.getContacts().remove(0);
-        entityManager.merge(user);
-
-        entityManager.getTransaction().commit();
+//        entityManager.getTransaction().begin();
+//
+//        User user = entityManager.find(User.class, 2L);
+//        ////entityManager.remove(user);
+//
+//        user.getContacts().remove(0);
+//        entityManager.merge(user);
+//
+//        entityManager.getTransaction().commit();
 
 
         //==============================//==============================

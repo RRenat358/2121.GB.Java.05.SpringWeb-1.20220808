@@ -21,6 +21,9 @@ public class Customer {
     @OneToOne
     private User user;
 
+    @OneToMany(mappedBy = "customer")
+    private List<Product> productsList;
+
 //    @OneToMany(mappedBy = "customer")
 //    private List<LineItem> products;
 

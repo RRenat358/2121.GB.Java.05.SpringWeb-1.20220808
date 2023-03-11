@@ -67,7 +67,9 @@ public class MainLesson07 {
 
         //==============================//==============================
 
-
+/*
+        //==============================
+        //var01
         List<User> users = entityManager.createQuery("""
                         select u from User u
                         where u.username like :usernameFilter
@@ -76,22 +78,26 @@ public class MainLesson07 {
                 .setParameter("usernameFilter", "%U%")
                 .setParameter("passwordFilter", "%pass%")
                 .getResultList();
+        System.out.println(users);
+*/
 
-//        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
-//        CriteriaQuery<User> query = cb.createQuery(User.class);
-//        Root<User> root = query.from(User.class);
-//        Join<Object, Object> contacts = root.join("contacts");
-//
-//        List<Predicate> predicates = new ArrayList<>();
-//        predicates.add(cb.like(root.get("username"), "%U%"));
-//        predicates.add(cb.like(root.get("password"), "%pass%"));
-//
-//
-//        List<User> resultList = entityManager.createQuery(query
-//                        .select(root)
-//                        .where(predicates.toArray(new Predicate[0])))
-//                .getResultList();
+        //==============================
+        //var02, более универсальный метод, +безопасный от SQL-инъекций
+        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+        CriteriaQuery<User> query = cb.createQuery(User.class);
+        Root<User> root = query.from(User.class);
+        Join<Object, Object> contacts = root.join("contacts");
 
+        List<Predicate> predicates = new ArrayList<>();
+        predicates.add(cb.like(root.get("username"), "%U%"));
+        predicates.add(cb.like(root.get("password"), "%pass%"));
+
+
+        List<User> resultList = entityManager.createQuery(query
+                        .select(root)
+                        .where(predicates.toArray(new Predicate[0])))
+                .getResultList();
+        System.out.println(resultList);
 
         //==============================//==============================
         System.out.println();

@@ -23,12 +23,14 @@ in module Lesson04-Spring-Boot
 01-03-00 == перерыв   
 01-13-00 == Dialect   
 01-16-00 == Spring Data   
-↓
----  
+↓  
 goto module Lesson04-Spring-Boot  
 ↓  
+I created module 7 from module 4  
+---
 01-18-00 == pom   
 01-19-00 == application.properties   
+01-24-00 == refactor module04   
 
 
 

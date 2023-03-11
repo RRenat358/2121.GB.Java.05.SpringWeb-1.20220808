@@ -23,7 +23,9 @@ VideoPoint
 01-27-00 == select для связанных таблиц   
 01-31-00 == fetch = FetchType.EAGER   
 01-36-00 == циклический вызов   
+01-38-00 == @ToString.Exclude   
 01-39-00 == toString() {... ", userId=" + user.getId() ... }  
+01-39-40 == n+1
    
 
 

@@ -29,6 +29,8 @@ VideoPoint
 01-46-40 == JOIN FETCH User.contacts   
 01-47-20 == orphanRemoval   
 01-48-00 == orphanRemoval   
+01-54-40 == @OrderColumn, ...  
+01-56-40 == @Embedded  
    
 
 

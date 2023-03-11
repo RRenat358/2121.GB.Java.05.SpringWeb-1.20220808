@@ -97,13 +97,13 @@ public class MainLesson6 {
 
 
         //DELETE & orphanRemoval
-        entityManager.getTransaction().begin();
-
-        User user = entityManager.find(User.class, 2L);
-        user.getContacts().remove(0);
-        entityManager.merge(user);
-
-        entityManager.getTransaction().commit();
+//        entityManager.getTransaction().begin();
+//
+//        User user = entityManager.find(User.class, 2L);
+//        user.getContacts().remove(0);
+//        entityManager.merge(user);
+//
+//        entityManager.getTransaction().commit();
 
 
 

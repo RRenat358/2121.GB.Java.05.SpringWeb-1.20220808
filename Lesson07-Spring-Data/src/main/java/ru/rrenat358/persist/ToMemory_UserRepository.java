@@ -6,11 +6,12 @@ import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Repository
-public class ToMemory_UserRepository {
+public class ToMemory_UserRepository implements UserRepository{
 
     private final Map<Long, User> userMap = new ConcurrentHashMap<>();
 
@@ -29,8 +30,8 @@ public class ToMemory_UserRepository {
         return new ArrayList<>(userMap.values());
     }
 
-    public User findById(long id) {
-        return userMap.get(id);
+    public Optional<User> userById(long id) {
+        return Optional.ofNullable(userMap.get(id));
     }
 
     public void insert(User user) {
@@ -47,7 +48,7 @@ public class ToMemory_UserRepository {
         return user;
     }
 
-    public void delete(long id) {
+    public void deleteById(long id) {
         userMap.remove(id);
     }
 

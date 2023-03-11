@@ -3,12 +3,14 @@ package ru.rrenat358.contoller;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import ru.rrenat358.persist.ToMemory_UserRepository;
 import ru.rrenat358.persist.User;
+import ru.rrenat358.persist.UserRepository;
+import ru.rrenat358.persist.UserRepositoryImpl;
 
 @Slf4j
 @Controller
@@ -16,7 +18,12 @@ import ru.rrenat358.persist.User;
 @RequiredArgsConstructor
 public class UserController {
 
-    private final ToMemory_UserRepository userRepository;
+
+    private final UserRepositoryImpl userRepository;
+
+//    public UserController(@Qualifier("persistentUserRepository") UserRepositoryImpl userRepository) {
+//        this.userRepository = userRepository;
+//    }
 
     @GetMapping
     public String listPage(Model model) {
@@ -26,7 +33,7 @@ public class UserController {
 
     @GetMapping("/{id}")
     public String form(@PathVariable("id") long id, Model model) {
-        model.addAttribute("user", userRepository.findById(id));
+        model.addAttribute("user", userRepository.userById(id));
         return "user_form";
     }
 
@@ -38,9 +45,10 @@ public class UserController {
 
     @GetMapping("/delete/{id}")
     public String deleteUserById(@PathVariable long id) {
-        userRepository.delete(id);
+        userRepository.deleteById(id);
         return "redirect:/user";
     }
+
 
     @PostMapping
     public String saveUser(@Valid @ModelAttribute("user") User user, BindingResult bindingResult) {
@@ -54,6 +62,7 @@ public class UserController {
         userRepository.save(user);
         return "redirect:/user";
     }
+
 
     @PostMapping("/update")
     public String updateUser(User user) {

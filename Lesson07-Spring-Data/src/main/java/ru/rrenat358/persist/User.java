@@ -14,7 +14,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
+//@AllArgsConstructor
 public class User {
 
     @Id
@@ -29,6 +29,9 @@ public class User {
 
     @Column(nullable = false, length = 1024)
     private String password;
+
+    @Transient
+    private String matchingPassword;
 
     public User(String username) {
         this.username = username;

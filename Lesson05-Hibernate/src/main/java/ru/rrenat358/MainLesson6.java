@@ -39,12 +39,21 @@ public class MainLesson6 {
 
 
         //==============================//==============================
-        User user3 = new User("User3", firstUserContactList, "pass2");
-        Passport passport = new Passport("1234", "123", "RUVD", Instant.now());
-//        Passport passport2 = new Passport("1234", "123", "RUVD", Instant.now());
-        user3.setPassport(passport);
-//        user2.setPassport(passport2);
+//        User user3 = new User("User3", firstUserContactList, "pass2");
+//        Passport passport = new Passport("1234", "123", "RUVD", Instant.now());
+////        Passport passport2 = new Passport("1234", "123", "RUVD", Instant.now());
+//        user3.setPassport(passport);
+////        user2.setPassport(passport2);
+//        entityManager.getTransaction().begin();
+//        entityManager.persist(user3);
+//        entityManager.getTransaction().commit();
 
+        User user31 = new User("User31", firstUserContactList, "pass31");
+        Passport passport31 = new Passport("31313", "31311", "RUVD31", Instant.now());
+        user31.setPassport(passport31);
+        entityManager.getTransaction().begin();
+        entityManager.persist(user31);
+        entityManager.getTransaction().commit();
 
         //==============================//==============================
         //INSERT

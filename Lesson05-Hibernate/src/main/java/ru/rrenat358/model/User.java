@@ -50,6 +50,7 @@ public class User {
 //    private List<Role> roles;
 
     @Embedded
+    @AttributeOverride(name = "otherDate", column = @Column(name = "issuedDate"))
     private Passport passport;
 
     public User(String username, List<Contact> contacts, String password) {

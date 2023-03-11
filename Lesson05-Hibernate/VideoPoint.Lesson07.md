@@ -17,6 +17,11 @@ Spring Data
 00-44-30 == @JoinColumn() каскадное удаление   
 00-50-00 == фильтрация в запросе   
 00-54-00 == CriteriaBuilder   
+01-03-00 == перерыв   
+01-13-00 == Dialect   
+01-16-00 == Spring Data   
+goto module Lesson04-Spring-Boot
+01-18-00 == pom   
 
  
    

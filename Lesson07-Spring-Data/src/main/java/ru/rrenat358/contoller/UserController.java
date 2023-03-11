@@ -4,10 +4,12 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import ru.rrenat358.exceptions.EntityNotFoundException;
 import ru.rrenat358.persist.User;
 import ru.rrenat358.persist.UserRepository;
 import ru.rrenat358.persist.UserRepositoryImpl;
@@ -51,7 +53,7 @@ public class UserController {
 
 
     @PostMapping
-    public String saveUser(@Valid @ModelAttribute("user") User user, BindingResult bindingResult) {
+    public String saveUser(@Valid /*@ModelAttribute("user") */User user, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "user_form";
         }
@@ -69,6 +71,14 @@ public class UserController {
         userRepository.save(user);
         return "redirect:/user";
     }
+
+    @ExceptionHandler
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public String notFoundExceptionHandler(Model model, EntityNotFoundException e) {
+        model.addAttribute("message", e.getMessage());
+        return "not_found";
+    }
+
 
 
 }

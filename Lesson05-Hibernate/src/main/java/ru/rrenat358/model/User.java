@@ -48,9 +48,9 @@ public class User {
 //
 //    @ManyToMany(mappedBy = "users")
 //    private List<Role> roles;
-//
-//    @Embedded
-//    private Passport passport;
+
+    @Embedded
+    private Passport passport;
 
     public User(String username, List<Contact> contacts, String password) {
         this.username = username;

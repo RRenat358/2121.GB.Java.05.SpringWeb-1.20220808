@@ -28,38 +28,45 @@ public class User {
     @Column(nullable = false, unique = true)
     private String username;
 
-//    @OneToMany(mappedBy = "user",
+    @OneToMany(mappedBy = "user",
 //            cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE},
-//            orphanRemoval = true)
-//    private List<Contact> contacts;
+            cascade = {CascadeType.ALL},
+            orphanRemoval = true/*, fetch = FetchType.EAGER*/)
+    private List<Contact> contacts;
 
     @Column(nullable = false, length = 1024)
     private String password;
 
-//    @OneToOne(mappedBy = "user",
-//            cascade = {CascadeType.ALL},
-//            orphanRemoval = true,
-//            fetch = FetchType.LAZY)
-//    private Customer customer;
+    // контакты со списком ID
+//    @ElementCollection
+//    private List<Long> ordersIds;
 
-//    @ManyToMany(mappedBy = "users")
-//    private List<Role> roles;
+    @OneToOne(mappedBy = "user",
+            cascade = {CascadeType.ALL},
+            orphanRemoval = true,
+            fetch = FetchType.LAZY)
+    private Customer customer;
 
-        public User(String username, String password) {
+    @ManyToMany(mappedBy = "users")
+    private List<Role> roles;
+
+    @Embedded
+    @AttributeOverride(name = "otherDate", column = @Column(name = "issuedDate"))
+    private Passport passport;
+
+    public User(String username, List<Contact> contacts, String password) {
         this.username = username;
-//        this.contacts = contacts;
+        this.contacts = contacts;
         this.password = password;
     }
 
-
-//    @Embedded
-//    private Passport passport;
-//
-//    public User(String username, List<Contact> contacts, String password) {
+//    public User(String username, String password) {
 //        this.username = username;
 //        this.contacts = contacts;
 //        this.password = password;
 //    }
-
-
+//
+//    public User(String user3, String s, String pass3) {
+//
+//    }
 }

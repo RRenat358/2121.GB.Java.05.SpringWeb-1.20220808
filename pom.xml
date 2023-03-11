@@ -24,6 +24,7 @@
         <module>Lesson03-Spring-MVC</module>
         <module>Lesson04-Spring-Boot</module>
         <module>Lesson05-Hibernate</module>
+        <module>Lesson07-Spring-Data</module>
     </modules>
 
     <dependencies>

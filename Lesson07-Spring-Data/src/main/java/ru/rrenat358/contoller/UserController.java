@@ -7,10 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import ru.rrenat358.persist.ToMemory_UserRepository;
 import ru.rrenat358.persist.User;
-import ru.rrenat358.persist.UserRepository;
-
-import javax.naming.Binding;
 
 @Slf4j
 @Controller
@@ -18,7 +16,7 @@ import javax.naming.Binding;
 @RequiredArgsConstructor
 public class UserController {
 
-    private final UserRepository userRepository;
+    private final ToMemory_UserRepository userRepository;
 
     @GetMapping
     public String listPage(Model model) {

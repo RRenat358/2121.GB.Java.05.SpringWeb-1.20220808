@@ -32,6 +32,8 @@ I created module 7 from module 4
 01-19-00 == application.properties   
 01-24-00 == refactor module04   
 01-25-00 == @Transient   
+01-26-00 == UserRepository   
+01-31-00 == Transactional   
 
 
 

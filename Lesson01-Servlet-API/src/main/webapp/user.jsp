@@ -1,5 +1,5 @@
 <%@ page import="ru.rrenat358.persist.User" %>
-<%@ page import="ru.rrenat358.persist.UserRepository" %>
+<%@ page import="ru.rrenat358.persist.ToMemory_UserRepository" %>
 <!doctype html>
 <html lang="en">
 

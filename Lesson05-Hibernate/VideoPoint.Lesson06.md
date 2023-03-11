@@ -1,6 +1,8 @@
 
 VideoPoint
 ---
+Hibernate 02
+---
 
 00-10-00 ==   
 00-11-00 == встроенный в IDEA http клиент  

@@ -24,34 +24,49 @@ public class MainLesson07 {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         //==============================//==============================
-        Contact mobile = new Contact(ContactType.MOBILE_PHONE, "123");
-        Contact email = new Contact(ContactType.HOME_EMAIL, "email@mail.com");
-        List<Contact> firstUserContactList = Arrays.asList(mobile, email);
 
-        Contact mobile2 = new Contact(ContactType.MOBILE_PHONE, "456");
-        Contact email2 = new Contact(ContactType.HOME_EMAIL, "email3222@mail.com");
-        List<Contact> secondUserContactList = Arrays.asList(mobile2, email2);
-
-        //==============================
-        User user = new User("User1", firstUserContactList, "pass1");
-        User user2 = new User("User2", secondUserContactList, "pass2");
-//        User user3 = new User("User3", firstUserContactList, "pass2");
-        Passport passport = new Passport("1234", "123", "RUVD", Instant.now());
-        Passport passport2 = new Passport("1234", "123", "RUVD", Instant.now());
-        user.setPassport(passport);
-        user2.setPassport(passport2);
-
-        firstUserContactList.forEach(contact -> contact.setUser(user));
-        secondUserContactList.forEach(contact -> contact.setUser(user2));
-
-        entityManager.getTransaction().begin();
-        entityManager.persist(user);
-        entityManager.persist(user2);
-        entityManager.getTransaction().commit();
-
+//        Contact mobile = new Contact(ContactType.MOBILE_PHONE, "123");
+//        Contact email = new Contact(ContactType.HOME_EMAIL, "email@mail.com");
+//        List<Contact> firstUserContactList = Arrays.asList(mobile, email);
+//
+//        Contact mobile2 = new Contact(ContactType.MOBILE_PHONE, "456");
+//        Contact email2 = new Contact(ContactType.HOME_EMAIL, "email3222@mail.com");
+//        List<Contact> secondUserContactList = Arrays.asList(mobile2, email2);
+//
+//        //==============================
+//        User user = new User("User1", firstUserContactList, "pass1");
+//        User user2 = new User("User2", secondUserContactList, "pass2");
+////        User user3 = new User("User3", firstUserContactList, "pass2");
+//        Passport passport = new Passport("1234", "123", "RUVD", Instant.now());
+//        Passport passport2 = new Passport("1234", "123", "RUVD", Instant.now());
+//        user.setPassport(passport);
+//        user2.setPassport(passport2);
+//
+//        firstUserContactList.forEach(contact -> contact.setUser(user));
+//        secondUserContactList.forEach(contact -> contact.setUser(user2));
+//
+//        entityManager.getTransaction().begin();
+//        entityManager.persist(user);
+//        entityManager.persist(user2);
+//        entityManager.getTransaction().commit();
 
 
         //==============================//==============================
+
+        //REMOVE
+        entityManager.getTransaction().begin();
+
+        User user = entityManager.find(User.class, 2L);
+//        entityManager.remove(user);
+
+        user.getContacts().remove(0);
+        entityManager.merge(user);
+
+        entityManager.getTransaction().commit();
+
+
+        //==============================//==============================
+
 /*
         List<User> users = entityManager.createQuery("""
                         select u from User u
@@ -81,13 +96,6 @@ public class MainLesson07 {
         //==============================//==============================
         System.out.println();
 
-//        entityManager.getTransaction().begin();
-//
-//        User user = entityManager.find(User.class, 2L);
-//        user.getContacts().remove(0);
-//        entityManager.merge(user);
-//
-//        entityManager.getTransaction().commit();
 
         entityManager.close();
         entityManagerFactory.close();

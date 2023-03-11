@@ -35,4 +35,7 @@ public class Product {
     @ManyToMany
     private List<Customer> customer;
 
+    @OneToMany
+    private List<LineItem> lineItem;
+
 }

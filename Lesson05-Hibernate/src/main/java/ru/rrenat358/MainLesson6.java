@@ -32,8 +32,8 @@ public class MainLesson6 {
         Contact email2 = new Contact(ContactType.HOME_EMAIL, "email3222@mail.com");
         List<Contact> secondUserContactList = Arrays.asList(mobile2, email2);
 
-        User user = new User("User1", firstUserContactList, "pass1");
-        User user2 = new User("User2", secondUserContactList, "pass2");
+//        User user = new User("User1", firstUserContactList, "pass1");
+//        User user2 = new User("User2", secondUserContactList, "pass2");
 
 
         //==============================//==============================
@@ -79,23 +79,32 @@ public class MainLesson6 {
 //        entityManager.getTransaction().commit();
 
         //==============================
-        //SELECT
+        //SELECT JOIN FETCH
+//        entityManager.getTransaction().begin();
+//
+//        List<User> users = entityManager.createQuery("""
+//                SELECT u FROM User u
+//                JOIN FETCH u.contacts
+//                """, User.class)
+//                .getResultList();
+//
+//        List<Contact> contacts = users.get(0).getContacts();
+//
+//        for (User user1 : users) {
+//            user1.getContacts().forEach(System.out::println);
+//        }
+//        entityManager.getTransaction().commit();
+
+
+        //DELETE & orphanRemoval
         entityManager.getTransaction().begin();
 
-//        List<User> users = entityManager.createNamedQuery("findAllUsers", User.class).getResultList();
+        User user = entityManager.find(User.class, 2L);
+        user.getContacts().remove(0);
+        entityManager.merge(user);
 
-        List<User> users = entityManager.createQuery("""
-                SELECT u FROM User u
-                JOIN FETCH u.contacts
-                """, User.class)
-                .getResultList();
-
-        List<Contact> contacts = users.get(0).getContacts();
-
-        for (User user1 : users) {
-            user1.getContacts().forEach(System.out::println);
-        }
         entityManager.getTransaction().commit();
+
 
 
         //==============================//==============================

@@ -27,7 +27,8 @@ VideoPoint
 01-39-00 == toString() {... ", userId=" + user.getId() ... }  
 01-39-40 == request * n+1  
 01-46-40 == JOIN FETCH User.contacts   
-01-47-20 == orphanRemoval = true   
+01-47-20 == orphanRemoval   
+01-48-00 == orphanRemoval   
    
 
 

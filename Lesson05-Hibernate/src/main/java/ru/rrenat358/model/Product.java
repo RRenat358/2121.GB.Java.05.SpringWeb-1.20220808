@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Getter
 @Setter
@@ -30,5 +31,8 @@ public class Product {
 
     @Column(nullable = false)
     private BigDecimal price;
+
+    @ManyToMany
+    private List<Customer> customer;
 
 }

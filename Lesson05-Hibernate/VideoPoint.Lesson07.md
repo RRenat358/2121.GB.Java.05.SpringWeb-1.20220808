@@ -11,6 +11,7 @@ Spring Data
 00-19-00 == orphanRemoval = true
 00-22-30 == HomeWork06   
 00-26-00 == BigDecimal price   
+00-30-00 == @OneToMany → @ManyToMany   
  
    
 

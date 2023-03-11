@@ -13,6 +13,11 @@ Spring Data
 00-26-00 == BigDecimal price   
 00-30-00 == @OneToMany → @ManyToMany   
 00-33-00 == LineItem   
+00-43-30 == @JoinColumn(name = "customer_id")   
+00-44-30 == @JoinColumn() каскадное удаление   
+00-50-00 == фильтрация в запросе   
+00-54-00 == CriteriaBuilder   
+
  
    
 

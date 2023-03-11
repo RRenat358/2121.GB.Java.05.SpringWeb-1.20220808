@@ -20,7 +20,7 @@ public class LineItem {
     private Product product;
 
     @ManyToOne
-//    @JoinColumn(name = "customer_id")
+    @JoinColumn(name = "customer_id")
     private Customer customer;
 
     private Long quantity;

@@ -6,8 +6,10 @@ import jakarta.persistence.criteria.*;
 import org.hibernate.cfg.Configuration;
 import ru.rrenat358.model.Contact;
 import ru.rrenat358.model.ContactType;
+import ru.rrenat358.model.Passport;
 import ru.rrenat358.model.User;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -37,10 +39,10 @@ public class MainLesson6 {
 
 
         //==============================//==============================
-////        User user3 = new User("User3", firstUserContactList, "pass2");
-//        Passport passport = new Passport("1234", "123", "RUVD", Instant.now());
+        User user3 = new User("User3", firstUserContactList, "pass2");
+        Passport passport = new Passport("1234", "123", "RUVD", Instant.now());
 //        Passport passport2 = new Passport("1234", "123", "RUVD", Instant.now());
-//        user.setPassport(passport);
+        user3.setPassport(passport);
 //        user2.setPassport(passport2);
 
 

@@ -31,6 +31,7 @@ I created module 7 from module 4
 01-18-00 == pom   
 01-19-00 == application.properties   
 01-24-00 == refactor module04   
+01-25-00 == @Transient   
 
 
 

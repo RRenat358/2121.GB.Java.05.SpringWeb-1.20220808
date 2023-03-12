@@ -25,6 +25,7 @@
         <module>Lesson04-Spring-Boot</module>
         <module>Lesson05-Hibernate</module>
         <module>Lesson07-Spring-Data</module>
+        <module>Lesson08-Thymeleaf</module>
     </modules>
 
     <dependencies>

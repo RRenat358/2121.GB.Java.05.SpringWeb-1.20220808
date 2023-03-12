@@ -37,6 +37,7 @@ I created module 7 from module 4
 01-41-00 == Run   
 01-44-00 == save()   
 01-46-00 == switch to SpringData   
+01-47-00 == interface UserRepository extends JpaRepository<User, Long>   
 
 
 

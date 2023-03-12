@@ -50,6 +50,17 @@
             </form>
         </div>
 
+        <div class="col-12 mt-3">
+            <form class="form-inline">
+                <div class="form-group mb-2 mr-2">
+                    <label for="emailFilter" class="sr-only">Email filter</label>
+                    <input type="text" class="form-control" id="emailFilter"
+                           name="emailFilter" placeholder="Email filter" th:value="${param.emailFilter}">
+                </div>
+
+                <button type="submit" class="btn btn-primary mb-2">Apply</button>
+            </form>
+        </div>
 
         <div class="col-12">
             <table class="table table-bordered my-2">

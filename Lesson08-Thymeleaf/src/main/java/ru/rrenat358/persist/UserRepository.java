@@ -1,8 +1,12 @@
 package ru.rrenat358.persist;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
+import java.util.List;
 
+@Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 /*
     List<User> findAll();
@@ -11,6 +15,14 @@ public interface UserRepository extends JpaRepository<User, Long> {
     void deleteById(long id);
 */
 
+    List<User> findAllByUsernameLike(String usernameFilter);
+
+    @Query(value = """
+            select * from users u
+            where :usernameFilter is null or u.usernme like :usernameFilter
+            and :emailFilter is null or u.usernme like :emailFilter
+            """, nativeQuery = true)
+    List<User> userByFilter(String usernameFilter, String emailFilter);
 
 
 }

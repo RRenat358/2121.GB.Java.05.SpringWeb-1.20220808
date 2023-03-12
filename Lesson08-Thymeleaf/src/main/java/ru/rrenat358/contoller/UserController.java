@@ -27,8 +27,15 @@ public class UserController {
 //    }
 
     @GetMapping
-    public String listPage(Model model) {
-        model.addAttribute("users", userRepository.findAll());
+    public String listPage(
+            @RequestParam(required = false) String usernameFilter,
+            @RequestParam(required = false) String emailFilter,
+            Model model) {
+        usernameFilter = usernameFilter == null || usernameFilter.isBlank() ? null : "%" + usernameFilter.trim() + "%";
+        emailFilter = emailFilter == null || emailFilter.isBlank() ? null : "%" + emailFilter.trim() + "%";
+        model.addAttribute(
+                "users",
+                userRepository.userByFilter(usernameFilter, emailFilter));
         return "user";
     }
 

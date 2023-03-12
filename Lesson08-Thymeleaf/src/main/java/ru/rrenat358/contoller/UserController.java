@@ -9,8 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import ru.rrenat358.exceptions.EntityNotFoundException;
-import ru.rrenat358.persist.User;
-import ru.rrenat358.persist.UserRepository;
+import ru.rrenat358.model.User;
+import ru.rrenat358.repository.UserRepository;
 
 
 @Slf4j

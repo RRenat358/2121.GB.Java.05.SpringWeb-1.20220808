@@ -1,6 +1,7 @@
-package ru.rrenat358.persist;
+package ru.rrenat358.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,6 +14,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class User {
 
     @Id
@@ -28,11 +30,8 @@ public class User {
     @Column(nullable = false, length = 1024)
     private String password;
 
-    @Transient
-    private String matchingPassword;
-
-    @ElementCollection
-    private List<UUID> ids;
+//    @ElementCollection
+//    private List<UUID> ids;
 
 
     public User(String username) {

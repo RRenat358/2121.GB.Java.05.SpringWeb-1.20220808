@@ -18,7 +18,9 @@ Lesson07-Spring-Data
 00-17-00 == mvn compile  
 00-18-00 == QUser  
 00-27-00 == List<UUID> ids;  
-00-33-00 == refactor == Controller → Service → Repository 
+00-33-00 == refactor == Controller → Service → Repository  
+00-37-00 == class UserDto  
+00-41-00 == class UserService  
 
 
 

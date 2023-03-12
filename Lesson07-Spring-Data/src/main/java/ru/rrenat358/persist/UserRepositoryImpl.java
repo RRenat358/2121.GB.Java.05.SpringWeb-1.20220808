@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository/*("persistentUserRepository")*/
-public class UserRepositoryImpl implements UserRepository{
+public class UserRepositoryImpl/* implements UserRepository*/{
 
 
     @PersistenceContext

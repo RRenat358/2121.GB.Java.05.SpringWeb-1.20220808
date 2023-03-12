@@ -21,7 +21,7 @@ import ru.rrenat358.persist.UserRepositoryImpl;
 public class UserController {
 
 
-    private final UserRepositoryImpl userRepository;
+    private final UserRepository userRepository;
 
 //    public UserController(@Qualifier("persistentUserRepository") UserRepositoryImpl userRepository) {
 //        this.userRepository = userRepository;
@@ -35,7 +35,7 @@ public class UserController {
 
     @GetMapping("/{id}")
     public String form(@PathVariable("id") long id, Model model) {
-        model.addAttribute("user", userRepository.userById(id));
+        model.addAttribute("user", userRepository.findById(id));
         return "user_form";
     }
 

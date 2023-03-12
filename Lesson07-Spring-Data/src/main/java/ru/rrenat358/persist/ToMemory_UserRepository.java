@@ -11,7 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Repository
-public class ToMemory_UserRepository implements UserRepository{
+public class ToMemory_UserRepository /*implements UserRepository*/{
 
     private final Map<Long, User> userMap = new ConcurrentHashMap<>();
 

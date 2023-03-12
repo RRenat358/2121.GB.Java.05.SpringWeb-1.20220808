@@ -27,6 +27,7 @@ Lesson07-Spring-Data
 01-18-00 == /перерыв   
 01-20-00 == org.mapstruct  
 01-21-50 == add mapper  
+01-34-30 == привели к mapper  
 
 
 

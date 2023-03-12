@@ -35,7 +35,7 @@ public class UserController {
         emailFilter = emailFilter == null || emailFilter.isBlank() ? null : "%" + emailFilter.trim() + "%";
         model.addAttribute(
                 "users",
-                userRepository.userByFilter(usernameFilter, emailFilter));
+                userRepository.usersByFilter(usernameFilter, emailFilter));
         return "user";
     }
 

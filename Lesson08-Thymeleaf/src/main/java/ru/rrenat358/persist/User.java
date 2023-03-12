@@ -5,6 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+import java.util.UUID;
+
 @Entity
 @Table(name = "users")
 @Getter
@@ -27,6 +30,10 @@ public class User {
 
     @Transient
     private String matchingPassword;
+
+    @ElementCollection
+    private List<UUID> ids;
+
 
     public User(String username) {
         this.username = username;

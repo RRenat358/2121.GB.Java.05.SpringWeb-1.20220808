@@ -1,7 +1,5 @@
-<%@ page import="ru.rrenat358.persist.User" %>
-<%@ page import="ru.rrenat358.persist.ToMemory_UserRepository" %>
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <!-- Required meta tags -->
@@ -37,8 +35,21 @@
 <div class="container">
     <div class="row py-2">
         <div class="col-12">
-            <a class="btn btn-primary" href="user_form.html">Add User</a>
+            <a class="btn btn-primary" th:href="@{/user/new}">Add User</a>
         </div>
+
+        <div class="col-12 mt-3">
+            <form class="form-inline">
+                <div class="form-group mb-2 mr-2">
+                    <label for="usernameFilter" class="sr-only">Username filter</label>
+                    <input type="text" class="form-control" id="usernameFilter"
+                           name="usernameFilter" placeholder="Username filter" th:value="${param.usernameFilter}">
+                </div>
+
+                <button type="submit" class="btn btn-primary mb-2">Apply</button>
+            </form>
+        </div>
+
 
         <div class="col-12">
             <table class="table table-bordered my-2">
@@ -46,23 +57,22 @@
                 <tr>
                     <th scope="col">Id</th>
                     <th scope="col">Username</th>
+                    <th scope="col">Email</th>
                     <th scope="col">Actions</th>
                 </tr>
                 </thead>
                 <tbody>
-                <%
-                    UserRepository userRepository = (UserRepository) application.getAttribute("userRepository");
-                    for (User user: userRepository.findAll()) {
-                %>
-                <tr>
-                    <th scope="row"><%= user.getId()%></th>
-                    <td><%= user.getUsername()%></td>
+                <tr th:each="user : ${users}">
+                    <th scope="row" th:text="${user.id}">1</th>
+                    <td th:text="${user.username}">Alex</td>
+                    <td th:text="${user.email}">some@mail.com</td>
                     <td>
-                        <a class="btn btn-success" href="user_form.html"><i class="fas fa-edit"></i></a>
-                        <a class="btn btn-danger" href="#"><i class="far fa-trash-alt"></i></a>
+                        <a class="btn btn-success" th:href="@{/user/{id}(id = ${user.id})}"><i class="fas fa-edit"></i></a>
+                        <form class="d-inline" th:method="delete" th:action="@{/user/{id}/(id = ${user.id})}">
+                            <button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                        </form>
                     </td>
                 </tr>
-                <% } %>
                 </tbody>
             </table>
         </div>

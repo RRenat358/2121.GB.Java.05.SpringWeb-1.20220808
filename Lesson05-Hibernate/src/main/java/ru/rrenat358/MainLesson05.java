@@ -1,14 +1,8 @@
 package ru.rrenat358;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import org.hibernate.cfg.Configuration;
-import ru.rrenat358.model.User;
-
-import java.util.List;
 //import org.hibernate.cfg.Configuration;
 
-public class Main {
+public class MainLesson05 {
     public static void main(String[] args) {
 
 //        System.out.println("==============================");

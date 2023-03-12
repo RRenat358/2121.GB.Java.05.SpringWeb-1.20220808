@@ -5,26 +5,27 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 @Getter
 @Setter
 @Entity
-@Table(name = "customers")
+@Table(name = "line_items")
 @NoArgsConstructor
-public class Customer {
+public class LineItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
-    private User user;
+    @ManyToOne
+    private Product product;
 
-//    @ManyToMany(mappedBy = "customer")
-//    private List<Product> productsList;
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
 
-    @OneToMany(mappedBy = "customer")
-    private List<LineItem> products;
+    private Long quantity;
 
+    private String color;
+
+    private String size;
 }

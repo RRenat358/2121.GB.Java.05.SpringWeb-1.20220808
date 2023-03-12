@@ -2,19 +2,9 @@ package ru.rrenat358;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.criteria.*;
 import org.hibernate.cfg.Configuration;
-import ru.rrenat358.model.Contact;
-import ru.rrenat358.model.ContactType;
-import ru.rrenat358.model.Passport;
-import ru.rrenat358.model.User;
 
-import java.time.Instant;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-public class MainLesson6 {
+public class MainLesson06 {
 
     public static void main(String[] args) {
 
@@ -118,45 +108,10 @@ public class MainLesson6 {
 //        entityManager.getTransaction().commit();
 
 
-
         //==============================//==============================
-//        List<User> users = entityManager.createQuery("""
-//                        select u from User u
-//                        where (u.username like :usernameFilter)
-//                         and u.password like :passwordFilter
-//                        """, User.class)
-//                .setParameter("usernameFilter", "%U%")
-//                .setParameter("passwordFilter", "%pass%")
-//                .getResultList();
-//
-//        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
-//        CriteriaQuery<User> query = cb.createQuery(User.class);
-//        Root<User> root = query.from(User.class);
-//        Join<Object, Object> contacts = root.join("contacts");
-//
-//        List<Predicate> predicates = new ArrayList<>();
-//        predicates.add(cb.like(root.get("username"), "%U%"));
-//        predicates.add(cb.like(root.get("password"), "%pass%"));
-//
-//
-//        List<User> resultList = entityManager.createQuery(query
-//                        .select(root)
-//                        .where(predicates.toArray(new Predicate[0])))
-//                .getResultList();
-
-
         System.out.println();
         System.out.println();
         System.out.println();
-
-
-//        entityManager.getTransaction().begin();
-//
-//        User user = entityManager.find(User.class, 2L);
-//        user.getContacts().remove(0);
-//        entityManager.merge(user);
-//
-//        entityManager.getTransaction().commit();
 
         entityManager.close();
         entityManagerFactory.close();

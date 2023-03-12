@@ -38,6 +38,15 @@ I created module 7 from module 4
 01-44-00 == save()   
 01-46-00 == switch to SpringData   
 01-47-00 == interface UserRepository extends **JpaRepository**<User, Long>   
+01-51-00 == **JpaRepository**<User, Long>    
+01-53-00 == userNameFilter - var02   
+02-02-00 == userNameFilter - var02   
+02-04-00 == test nativeQuery in QL  
+02-05-00 == email Filter  
+02-05-40 == Filter null   
+02-08-00 == userNameFilter - var03   
+02-14-00 == HomeWork07   
+02-17-30 == @RequestParam, PostMan   
 
 
 

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import ru.rrenat358.exceptions.EntityNotFoundException;
 import ru.rrenat358.persist.User;
 import ru.rrenat358.persist.UserRepository;
-import ru.rrenat358.persist.UserRepositoryImpl;
+
 
 @Slf4j
 @Controller
@@ -35,7 +35,8 @@ public class UserController {
 
     @GetMapping("/{id}")
     public String form(@PathVariable("id") long id, Model model) {
-        model.addAttribute("user", userRepository.findById(id));
+        model.addAttribute("user", userRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException(" == User not found ==")));
         return "user_form";
     }
 

@@ -38,6 +38,19 @@
             <a class="btn btn-primary" th:href="@{/user/new}">Add User</a>
         </div>
 
+        <div class="col-12 mt-3">
+            <form class="form-inline">
+                <div class="form-group mb-2 mr-2">
+                    <label for="usernameFilter" class="sr-only">Username filter</label>
+                    <input type="text" class="form-control" id="usernameFilter"
+                           name="usernameFilter" placeholder="Username filter" th:value="${param.usernameFilter}">
+                </div>
+
+                <button type="submit" class="btn btn-primary mb-2">Apply</button>
+            </form>
+        </div>
+
+
         <div class="col-12">
             <table class="table table-bordered my-2">
                 <thead>

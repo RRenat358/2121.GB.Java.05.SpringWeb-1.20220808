@@ -41,4 +41,8 @@ public class UserService {
     }
 
 
+    //todo
+    public Object findAllByFilter(String usernameFilter, String emailFilter) {
+        return null;
+    }
 }

@@ -10,7 +10,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import ru.rrenat358.exceptions.EntityNotFoundException;
 import ru.rrenat358.model.User;
+import ru.rrenat358.model.dto.UserDto;
 import ru.rrenat358.repository.UserRepository;
+import ru.rrenat358.service.UserService;
 
 
 @Slf4j
@@ -20,7 +22,7 @@ import ru.rrenat358.repository.UserRepository;
 public class UserController {
 
 
-    private final UserRepository userRepository;
+    private final UserService userService;
 
 //    public UserController(@Qualifier("persistentUserRepository") UserRepositoryImpl userRepository) {
 //        this.userRepository = userRepository;
@@ -35,47 +37,47 @@ public class UserController {
         emailFilter = emailFilter == null || emailFilter.isBlank() ? null : "%" + emailFilter.trim() + "%";
         model.addAttribute(
                 "users",
-                userRepository.usersByFilter(usernameFilter, emailFilter));
+                userService.findAllByFilter(usernameFilter, emailFilter));
         return "user";
     }
 
     @GetMapping("/{id}")
     public String form(@PathVariable("id") long id, Model model) {
-        model.addAttribute("user", userRepository.findById(id)
+        model.addAttribute("user", userService.findUserById(id)
                 .orElseThrow(() -> new EntityNotFoundException(" == User not found ==")));
         return "user_form";
     }
 
     @GetMapping("/new")
     public String addNewUser(Model model) {
-        model.addAttribute("user", new User(""));
+        model.addAttribute("user", new UserDto());
         return "user_form";
     }
 
     @GetMapping("/delete/{id}")
     public String deleteUserById(@PathVariable long id) {
-        userRepository.deleteById(id);
+        userService.deleteUserById(id);
         return "redirect:/user";
     }
 
 
     @PostMapping
-    public String saveUser(@Valid /*@ModelAttribute("user") */User user, BindingResult bindingResult) {
+    public String saveUser(@Valid @ModelAttribute("user") UserDto userDto, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "user_form";
         }
-        if (!user.getPassword().equals(user.getMatchingPassword())) {
+        if (!userDto.getPassword().equals(userDto.getMatchingPassword())) {
             bindingResult.rejectValue("password", "Password not match");
             return "user_form";
         }
-        userRepository.save(user);
+        userService.save(userDto);
         return "redirect:/user";
     }
 
 
     @PostMapping("/update")
-    public String updateUser(User user) {
-        userRepository.save(user);
+    public String updateUser(UserDto userDto) {
+        userService.save(userDto);
         return "redirect:/user";
     }
 

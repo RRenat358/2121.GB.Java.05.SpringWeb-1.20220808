@@ -26,10 +26,10 @@ public class UserService {
         QUser user = QUser.user;
         BooleanBuilder predicate = new BooleanBuilder();
 
-        if (usernameFilter != null || !usernameFilter.isBlank()) {
+        if (usernameFilter != null /*|| !usernameFilter.isBlank()*/) {
             predicate.and(user.username.contains(usernameFilter.trim()));
         }
-        if (emailFilter != null || !emailFilter.isBlank()) {
+        if (emailFilter != null /*|| !emailFilter.isBlank()*/) {
             predicate.and(user.email.contains(emailFilter.trim()));
         }
         return StreamSupport.stream(userRepository.findAll(predicate).spliterator(), true)

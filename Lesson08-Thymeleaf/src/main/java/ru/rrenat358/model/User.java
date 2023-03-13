@@ -1,13 +1,16 @@
 package ru.rrenat358.model;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-import java.util.UUID;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "users")
@@ -29,9 +32,6 @@ public class User {
 
     @Column(nullable = false, length = 1024)
     private String password;
-
-//    @ElementCollection
-//    private List<UUID> ids;
 
     public User(String username) {
         this.username = username;

@@ -1,6 +1,6 @@
 package ru.rrenat358.contoller;
 
-import jakarta.validation.Valid;
+//import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -13,6 +13,8 @@ import ru.rrenat358.model.User;
 import ru.rrenat358.model.dto.UserDto;
 import ru.rrenat358.repository.UserRepository;
 import ru.rrenat358.service.UserService;
+
+import javax.validation.Valid;
 
 
 @Slf4j

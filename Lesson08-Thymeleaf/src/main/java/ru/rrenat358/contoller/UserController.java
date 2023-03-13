@@ -16,6 +16,7 @@ import ru.rrenat358.repository.UserRepository;
 import ru.rrenat358.service.UserService;
 
 import javax.validation.Valid;
+import java.util.Optional;
 
 
 @Slf4j
@@ -55,10 +56,15 @@ public class UserController {
     public String listPage(
             @RequestParam(required = false) String usernameFilter,
             @RequestParam(required = false) String emailFilter,
-            Model model) {
+            @RequestParam(required = false) Optional<Integer> page,
+            @RequestParam(required = false) Optional<Integer> size,
+            Model model)
+    {
+        Integer pageValue = page.orElse(1)-1;
+        Integer sizeValue = size.orElse(3);
         model.addAttribute(
                 "users",
-                userService.findAllByFilter(usernameFilter, emailFilter));
+                userService.findAllByFilter(usernameFilter, emailFilter, pageValue, sizeValue));
         return "user";
     }
 

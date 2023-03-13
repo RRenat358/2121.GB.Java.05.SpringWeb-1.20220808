@@ -30,6 +30,10 @@ Lesson07-Spring-Data
 01-34-30 == привели к mapper  
 01-37-00 ==    
 01-38-00 == bootstrap pagination   
+01-41-00 == interface Pageable   
+01-51-00 == search convert "Stream/Map/List" to Page    
+02-03-00 == SQLGrammarException    
+02-05-00 == countQuery    
 
 
 

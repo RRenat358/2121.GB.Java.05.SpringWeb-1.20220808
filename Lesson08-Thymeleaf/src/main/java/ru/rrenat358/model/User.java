@@ -33,7 +33,6 @@ public class User {
 //    @ElementCollection
 //    private List<UUID> ids;
 
-
     public User(String username) {
         this.username = username;
     }

@@ -40,7 +40,7 @@ public class UserService {
 
     //todo
     public void save(UserDto dto) {
-//        userRepository.save(mapper.map(dto));
+        userRepository.save(mapper.map(dto));
 
     }
 

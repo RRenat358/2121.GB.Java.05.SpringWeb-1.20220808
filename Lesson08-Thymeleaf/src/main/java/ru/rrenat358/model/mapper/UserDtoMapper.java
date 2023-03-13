@@ -12,7 +12,7 @@ public interface UserDtoMapper {
     UserDto map(User user);
 
     @Mapping(target = "id", ignore = true)
-    @Mapping(source = "password", target = "password", qualifiedByName = "encode")
+    @Mapping(source = "password", target = "password"/*, qualifiedByName = "encode"*/)
     User map(UserDto dto/*, @Context PasswordEncoder encoder*/);
 
     @Named("encode")

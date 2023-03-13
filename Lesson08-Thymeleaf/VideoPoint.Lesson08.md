@@ -34,6 +34,10 @@ Lesson07-Spring-Data
 01-51-00 == search convert "Stream/Map/List" to Page    
 02-03-00 == SQLGrammarException    
 02-05-00 == countQuery    
+02-06-30 == HomeWork08    
+02-07-00 == frontend    
+02-09-00 == interface Slice    
+02-13-30 == Evaluate    
 
 
 

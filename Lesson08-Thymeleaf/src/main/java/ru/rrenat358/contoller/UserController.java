@@ -1,6 +1,7 @@
 package ru.rrenat358.contoller;
 
 //import jakarta.validation.Valid;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -23,20 +24,38 @@ import javax.validation.Valid;
 @RequiredArgsConstructor
 public class UserController {
 
-
     private final UserService userService;
 
-//    public UserController(@Qualifier("persistentUserRepository") UserRepositoryImpl userRepository) {
-//        this.userRepository = userRepository;
-//    }
+/*
+    @GetMapping
+    public String listPage(@RequestParam Optional<String> usernameFilter, Model model) {
+        if (usernameFilter.isEmpty() || usernameFilter.get().isBlank()) {
+            model.addAttribute("users", userRepository.findAll());
+        } else {
+            model.addAttribute("users", userRepository.usersByUsername("%" + usernameFilter.get() + "%"));
+        }
+        return "user";
+    }
+*/
+/*
+    @GetMapping
+    public String listPage(
+            @RequestParam(required = false) String usernameFilter,
+            @RequestParam(required = false) String emailFilter,
+            Model model
+    ) {
+        usernameFilter = usernameFilter == null || usernameFilter.isBlank() ? null : "%" + usernameFilter.trim() + "%";
+        emailFilter = emailFilter == null || emailFilter.isBlank() ? null : "%" + emailFilter.trim() + "%";
+        model.addAttribute("users", userRepository.usersByFilter(usernameFilter, emailFilter));
+        return "user";
+    }
+*/
 
     @GetMapping
     public String listPage(
             @RequestParam(required = false) String usernameFilter,
             @RequestParam(required = false) String emailFilter,
             Model model) {
-        usernameFilter = usernameFilter == null || usernameFilter.isBlank() ? null : "%" + usernameFilter.trim() + "%";
-        emailFilter = emailFilter == null || emailFilter.isBlank() ? null : "%" + emailFilter.trim() + "%";
         model.addAttribute(
                 "users",
                 userService.findAllByFilter(usernameFilter, emailFilter));
@@ -89,7 +108,6 @@ public class UserController {
         model.addAttribute("message", e.getMessage());
         return "not_found";
     }
-
 
 
 }

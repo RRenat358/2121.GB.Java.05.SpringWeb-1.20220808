@@ -22,10 +22,6 @@ public class UserService {
     private final UserRepository userRepository;
 
 
-    //todo
-//    public Object findAllByFilter(String usernameFilter, String emailFilter) {
-//        return null;
-//    }
 
     public List<UserDto> findAllByFilter(String usernameFilter, String emailFilter) {
         QUser user = QUser.user;
@@ -47,6 +43,7 @@ public class UserService {
 //                    dto.setPassword(userFromDB.getPassword());
 //                    return dto;
 //                      }
+                        //OR ↓
                         mapper::map
                 ).collect(Collectors.toList());
     }

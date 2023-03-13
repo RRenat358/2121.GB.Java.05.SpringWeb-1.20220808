@@ -35,31 +35,57 @@
 <div class="container">
     <div class="row py-2">
         <div class="col-12">
-            <form th:action="@{/user}" method="post" th:object="${user}">
-                <input th:field="*{id}" type="hidden" id="id" name="id" >
-                <div class="form-group">
-                    <label>Username</label>
-                    <input th:field="*{username}" type="text" class="form-control" id="name" name="username" placeholder="Enter username" >
-                    <p class="text-danger" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p>
-                </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input th:field="*{email}" type="email" class="form-control" id="email" name="email" placeholder="Enter email" >
-                    <p class="text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
-                </div>
-                <div class="form-group">
-                    <label>Password</label>
-                    <input th:field="*{password}" type="password" class="form-control" id="password" name="password" placeholder="Enter password" >
-                    <p class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
-                </div>
-                <div class="form-group">
-                    <label>Retype password</label>
-                    <input th:field="*{matchingPassword}" type="password" class="form-control" id="matchingPassword" name="matchingPassword" placeholder="Retype password" >
-                    <p class="text-danger" th:if="${#fields.hasErrors('matchingPassword')}" th:errors="*{matchingPassword}"></p>
+            <a class="btn btn-primary" th:href="@{/user/new}">Add User</a>
+        </div>
 
+        <div class="col-12 mt-3">
+            <form class="form-inline">
+                <div class="form-group mb-2 mr-2">
+                    <label for="usernameFilter" class="sr-only">Username filter</label>
+                    <input type="text" class="form-control" id="usernameFilter"
+                           name="usernameFilter" placeholder="Username filter">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+
+                <button type="submit" class="btn btn-primary mb-2">Apply</button>
             </form>
+        </div>
+
+        <div class="col-12 mt-3">
+            <form class="form-inline">
+                <div class="form-group mb-2 mr-2">
+                    <label for="emailFilter" class="sr-only">Email filter</label>
+                    <input type="text" class="form-control" id="emailFilter"
+                           name="emailFilter" placeholder="Email filter">
+                </div>
+
+                <button type="submit" class="btn btn-primary mb-2">Apply</button>
+            </form>
+        </div>
+
+        <div class="col-12">
+            <table class="table table-bordered my-2">
+                <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="user : ${users}">
+                    <th scope="row" th:text="${user.id}">1</th>
+                    <td th:text="${user.username}">Alex</td>
+                    <td th:text="${user.email}">some@mail.com</td>
+                    <td>
+                        <a class="btn btn-success" th:href="@{/user/{id}(id = ${user.id})}"><i class="fas fa-edit"></i></a>
+                        <form class="d-inline" th:method="delete" th:action="@{/user/{id}/(id = ${user.id})}">
+                            <button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
@@ -75,7 +101,5 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-
 </body>
-
 </html>

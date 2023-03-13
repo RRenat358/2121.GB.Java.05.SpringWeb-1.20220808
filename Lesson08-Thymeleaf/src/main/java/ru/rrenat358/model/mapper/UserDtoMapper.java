@@ -1,7 +1,7 @@
 package ru.rrenat358.model.mapper;
 
 import org.mapstruct.*;
-import org.springframework.security.crypto.password.PasswordEncoder;
+//import org.springframework.security.crypto.password.PasswordEncoder;
 import ru.rrenat358.model.User;
 import ru.rrenat358.model.dto.UserDto;
 

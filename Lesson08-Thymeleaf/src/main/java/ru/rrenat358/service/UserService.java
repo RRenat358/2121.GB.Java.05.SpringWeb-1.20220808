@@ -22,7 +22,6 @@ public class UserService {
     private final UserRepository userRepository;
 
 
-
     public List<UserDto> findAllByFilter(String usernameFilter, String emailFilter) {
         QUser user = QUser.user;
         BooleanBuilder predicate = new BooleanBuilder();
@@ -53,10 +52,8 @@ public class UserService {
         return userRepository.findById(id).map(mapper::map);
     }
 
-    //todo
     public void save(UserDto dto) {
         userRepository.save(mapper.map(dto));
-
     }
 
     public void deleteUserById(Long id) {

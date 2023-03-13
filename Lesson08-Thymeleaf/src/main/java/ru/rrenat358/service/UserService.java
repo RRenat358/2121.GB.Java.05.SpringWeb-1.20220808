@@ -38,16 +38,17 @@ public class UserService {
             predicate.and(user.email.contains(emailFilter.trim()));
         }
         return StreamSupport.stream(userRepository.findAll(predicate).spliterator(), true)
-                .map(userFromDB -> {
-                    UserDto dto = new UserDto();
-
-                    dto.setId(userFromDB.getId());
-                    dto.setUsername(userFromDB.getUsername());
-                    dto.setEmail(userFromDB.getEmail());
-                    dto.setPassword(userFromDB.getPassword());
-
-                    return dto;
-                }).collect(Collectors.toList());
+                .map(
+//                        userFromDB -> {
+//                    UserDto dto = new UserDto();
+//                    dto.setId(userFromDB.getId());
+//                    dto.setUsername(userFromDB.getUsername());
+//                    dto.setEmail(userFromDB.getEmail());
+//                    dto.setPassword(userFromDB.getPassword());
+//                    return dto;
+//                      }
+                        mapper::map
+                ).collect(Collectors.toList());
     }
 
 

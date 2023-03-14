@@ -1,7 +1,5 @@
-<%@ page import="ru.rrenat358.persist.User" %>
-<%@ page import="ru.rrenat358.persist.UserRepository" %>
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <!-- Required meta tags -->
@@ -37,34 +35,31 @@
 <div class="container">
     <div class="row py-2">
         <div class="col-12">
-            <a class="btn btn-primary" href="user_form.html">Add User</a>
-        </div>
+            <form th:action="@{/user}" method="post" th:object="${user}">
+                <input th:field="*{id}" type="hidden" id="id" name="id" >
+                <div class="form-group">
+                    <label>Username</label>
+                    <input th:field="*{username}" type="text" class="form-control" id="name" name="username" placeholder="Enter username" >
+                    <p class="text-danger" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input th:field="*{email}" type="email" class="form-control" id="email" name="email" placeholder="Enter email" >
+                    <p class="text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input th:field="*{password}" type="password" class="form-control" id="password" name="password" placeholder="Enter password" >
+                    <p class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
+                </div>
+                <div class="form-group">
+                    <label>Retype password</label>
+                    <input th:field="*{matchingPassword}" type="password" class="form-control" id="matchingPassword" name="matchingPassword" placeholder="Retype password" >
+                    <p class="text-danger" th:if="${#fields.hasErrors('matchingPassword')}" th:errors="*{matchingPassword}"></p>
 
-        <div class="col-12">
-            <table class="table table-bordered my-2">
-                <thead>
-                <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Username</th>
-                    <th scope="col">Actions</th>
-                </tr>
-                </thead>
-                <tbody>
-                <%
-                    UserRepository userRepository = (UserRepository) application.getAttribute("userRepository");
-                    for (User user: userRepository.findAll()) {
-                %>
-                <tr>
-                    <th scope="row"><%= user.getId()%></th>
-                    <td><%= user.getUsername()%></td>
-                    <td>
-                        <a class="btn btn-success" href="user_form.html"><i class="fas fa-edit"></i></a>
-                        <a class="btn btn-danger" href="#"><i class="far fa-trash-alt"></i></a>
-                    </td>
-                </tr>
-                <% } %>
-                </tbody>
-            </table>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
         </div>
     </div>
 </div>
@@ -80,5 +75,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
 </body>
+
 </html>

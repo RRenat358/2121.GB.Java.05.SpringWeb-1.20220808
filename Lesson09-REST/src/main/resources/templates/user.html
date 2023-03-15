@@ -92,8 +92,11 @@
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
 
-                    <li class="page-item">
-                        <a class="page-link" href="#">Previous</a>
+                    <li class="page-item" th:classappend="${users.isFirst()} ? 'disabled'">
+                        <a class="page-link"
+                           th:href="@{/user(page=${users.number}, size=${users.size})}">
+                            Previous
+                        </a>
                     </li>
 
                     <li th:each="num : ${#numbers.sequence(1, users.totalPages)}"
@@ -104,9 +107,11 @@
                         </a>
                     </li>
 
-
-                    <li class="page-item">
-                        <a class="page-link" href="#">Next</a>
+                    <li class="page-item" th:classappend="${users.isLast()} ? 'disabled'">
+                        <a class="page-link"
+                           th:href="@{/user(page=${users.number + 2}, size=${users.size})}">
+                            Next
+                        </a>
                     </li>
                 </ul>
             </nav>

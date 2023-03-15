@@ -5,6 +5,7 @@ import com.querydsl.core.BooleanBuilder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import ru.rrenat358.model.QUser;
 import ru.rrenat358.model.dto.UserDto;
@@ -50,7 +51,7 @@ public class UserService {
     }
 */
 
-    public Page<UserDto> findAllByFilter(String usernameFilter, String emailFilter, int page, int size) {
+    public Page<UserDto> findAllByFilter(String usernameFilter, String emailFilter, int page, int size, String sortField) {
         usernameFilter =
                 usernameFilter == null || usernameFilter.isBlank()
                         ? null
@@ -60,7 +61,7 @@ public class UserService {
                         ? null
                         : "%" + emailFilter.trim() + "%";
 
-        return userRepository.usersByFilter(usernameFilter, emailFilter, PageRequest.of(page, size))
+        return userRepository.usersByFilter(usernameFilter, emailFilter, PageRequest.of(page, size, Sort.by(sortField)))
                 .map(mapper::map);
     }
 

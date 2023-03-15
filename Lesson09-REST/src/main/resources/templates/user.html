@@ -43,7 +43,7 @@
                 <div class="form-group mb-2 mr-2">
                     <label for="usernameFilter" class="sr-only">Username filter</label>
                     <input type="text" class="form-control" id="usernameFilter"
-                           name="usernameFilter" placeholder="Username filter">
+                           name="usernameFilter" placeholder="Username filter" th:value="${param.usernameFilter}">
                 </div>
 
                 <button type="submit" class="btn btn-primary mb-2">Apply</button>
@@ -55,7 +55,7 @@
                 <div class="form-group mb-2 mr-2">
                     <label for="emailFilter" class="sr-only">Email filter</label>
                     <input type="text" class="form-control" id="emailFilter"
-                           name="emailFilter" placeholder="Email filter">
+                           name="emailFilter" placeholder="Email filter" th:value="${param.emailFilter}">
                 </div>
 
                 <button type="submit" class="btn btn-primary mb-2">Apply</button>

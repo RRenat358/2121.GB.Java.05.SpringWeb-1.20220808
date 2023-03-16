@@ -1,0 +1,9 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th th:fragment="sort_header (header, column)" scope="col"> [[${header}]]
+  <a th:href="@{/user(page=${param.number}, size=${param.size}, sortField=${column})}">
+    <i class="fa fa-sort-down"></i>
+  </a>
+</th>
+
+</html>

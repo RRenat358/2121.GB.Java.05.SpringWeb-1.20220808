@@ -1,0 +1,11 @@
+###
+POST http://localhost:8090/api/v1/user
+Content-Type: application/json
+
+{
+  "username": "Adam69999999",
+  "email": "fakedata2417222222@gmail.com",
+  "password": "9999999"
+}
+
+

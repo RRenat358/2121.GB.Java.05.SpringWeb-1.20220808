@@ -10,7 +10,9 @@ Lesson07-Spring-Data
 ↓  
 Lesson08-Spring-Thymeleaf
 ↓
-**Lesson09-Spring-REST**
+Lesson09-Spring-REST
+↓
+**Lesson10-SpringApp**
 ---  
   
 00-09-00 ==   

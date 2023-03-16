@@ -7,7 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import ru.rrenat358.model.QUser;
+//import ru.rrenat358.model.QUser;
 import ru.rrenat358.model.dto.UserDto;
 import ru.rrenat358.model.mapper.UserDtoMapper;
 import ru.rrenat358.repository.UserRepository;

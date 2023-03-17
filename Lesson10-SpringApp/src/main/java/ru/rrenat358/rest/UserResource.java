@@ -22,7 +22,7 @@ public class UserResource {
     private final UserService userService;
 
     @GetMapping
-    public List<UserDto> listPage(
+    public Page<UserDto> listPage(
             @RequestParam(required = false) String usernameFilter,
             @RequestParam(required = false) String emailFilter,
             @RequestParam(required = false) Optional<Integer> page,
@@ -34,9 +34,8 @@ public class UserResource {
         Integer sizeValue = size.orElse(3);
         String sortFieldValue = sortField.filter(s -> !s.isBlank()).orElse("id");
         Page<UserDto> allByFilter = userService.findAllByFilter(usernameFilter, emailFilter, pageValue, sizeValue, sortFieldValue);
-        List<UserDto> users = allByFilter.get().collect(Collectors.toList());
-        log.info("user: {}", users);
-        return users;
+        log.info("user: {}", allByFilter);
+        return allByFilter;
     }
 
     @GetMapping("/{id}")

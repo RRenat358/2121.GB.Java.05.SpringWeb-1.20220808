@@ -1,6 +1,7 @@
 package ru.rrenat358.rest;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/v1/user")
 @RequiredArgsConstructor
@@ -27,11 +29,13 @@ public class UserResource {
             @RequestParam(required = false) Optional<Integer> size,
             @RequestParam(required = false) Optional<String> sortField
     ) {
+        log.info("HERE WE ARE");
         Integer pageValue = page.orElse(1) - 1;
         Integer sizeValue = size.orElse(3);
         String sortFieldValue = sortField.filter(s -> !s.isBlank()).orElse("id");
         Page<UserDto> allByFilter = userService.findAllByFilter(usernameFilter, emailFilter, pageValue, sizeValue, sortFieldValue);
         List<UserDto> users = allByFilter.get().collect(Collectors.toList());
+        log.info("user: {}", users);
         return users;
     }
 

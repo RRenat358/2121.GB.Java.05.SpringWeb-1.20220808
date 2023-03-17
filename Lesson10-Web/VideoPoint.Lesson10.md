@@ -32,8 +32,20 @@ Lesson09-Spring-REST
 00-44-00 == run    
 00-46-30 == app.component.html     
 00-46-30 == New > Angular Schematic...     
-00-46-30 == header .component.html    
-00-50-50 == .component.html     
+00-46-30 == header.component.html  
+00-50-50 == footer.component.html     
+00-54-00 == app-routing.module.ts    
+00-56-00 == lib fond-awesome - npm    
+00-57-00 ==     
+00-58-30 == user-service    
+01-07-00 == перерыв    
+01-17-00 == перерыв    
+01-18-00 == routerLink="/user/{{user.id}}    
+01-19-00 == цикл ==  *ngFor="let user of users"    
+01-20-00 == delete()    
+01-21-00 == noRunnable, devTools    
+01-36-00 ==    
+
 
 
 

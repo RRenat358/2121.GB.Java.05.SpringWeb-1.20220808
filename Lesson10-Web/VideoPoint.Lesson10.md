@@ -26,7 +26,9 @@ Lesson09-Spring-REST
 00-22-00 == rest   
 00-29-00 == node.js   
 00-30-20 == node.js -- проверка версии  
-00-33-20 == создание     
+00-33-20 == создание проекта Angular через cmd   
+00-37-00 == пояснение по файлам проекта Angular Frontend     
+00-39-00 == add dependencies for Angular    
 
 
 

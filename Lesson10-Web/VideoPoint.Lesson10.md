@@ -31,6 +31,8 @@ Lesson09-Spring-REST
 00-39-00 == add dependencies for Angular    
 00-44-00 == run    
 00-46-30 == app.component.html     
+00-46-30 == New > Angular Schematic...     
+00-46-30 == header     
 
 
 

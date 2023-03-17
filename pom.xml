@@ -27,6 +27,7 @@
         <module>Lesson07-Spring-Data</module>
         <module>Lesson08-Thymeleaf</module>
         <module>Lesson09-REST</module>
+        <module>Lesson10-SpringApp</module>
     </modules>
 
     <dependencies>

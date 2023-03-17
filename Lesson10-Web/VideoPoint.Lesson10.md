@@ -26,13 +26,14 @@ Lesson09-Spring-REST
 00-22-00 == rest   
 00-29-00 == node.js   
 00-30-20 == node.js -- проверка версии  
-00-33-20 == создание проекта Angular через cmd   
-00-37-00 == пояснение по файлам проекта Angular Frontend     
+00-33-20 == создание проекта Angular через cmd  
+00-37-00 == пояснение по файлам проекта Angular Frontend  
 00-39-00 == add dependencies for Angular    
 00-44-00 == run    
 00-46-30 == app.component.html     
 00-46-30 == New > Angular Schematic...     
-00-46-30 == header     
+00-46-30 == header .component.html    
+00-50-50 == .component.html     
 
 
 

@@ -41,7 +41,7 @@ Lesson09-Spring-REST
 01-07-00 == перерыв    
 01-17-00 == перерыв    
 01-18-00 == routerLink="/user/{{user.id}}    
-01-19-00 == цикл ==  *ngFor="let user of users"    
+01-19-00 == цикл == *ngFor="let user of users"    
 01-20-00 == delete()    
 01-21-00 == noRunnable, devTools    
 01-36-00 ==    

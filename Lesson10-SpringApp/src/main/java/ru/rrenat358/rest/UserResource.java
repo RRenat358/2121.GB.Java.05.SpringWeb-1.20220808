@@ -9,9 +9,7 @@ import ru.rrenat358.exceptions.EntityNotFoundException;
 import ru.rrenat358.model.dto.UserDto;
 import ru.rrenat358.service.UserService;
 
-import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Slf4j
 @RestController
@@ -19,7 +17,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class UserResource {
 
-    private final UserService userService;
+    private final UserService service;
 
     @GetMapping
     public Page<UserDto> listPage(
@@ -29,27 +27,27 @@ public class UserResource {
             @RequestParam(required = false) Optional<Integer> size,
             @RequestParam(required = false) Optional<String> sortField
     ) {
-        log.info("HERE WE ARE");
+        log.info("=== HERE WE ARE");
         Integer pageValue = page.orElse(1) - 1;
         Integer sizeValue = size.orElse(3);
         String sortFieldValue = sortField.filter(s -> !s.isBlank()).orElse("id");
-        Page<UserDto> allByFilter = userService.findAllByFilter(usernameFilter, emailFilter, pageValue, sizeValue, sortFieldValue);
+        Page<UserDto> allByFilter = service.findAllByFilter(usernameFilter, emailFilter, pageValue, sizeValue, sortFieldValue);
         log.info("user: {}", allByFilter);
         return allByFilter;
     }
 
     @GetMapping("/{id}")
     public UserDto form(@PathVariable("id") long id, Model model) {
-        UserDto userDto = userService.findUserById(id).orElseThrow(() -> new EntityNotFoundException("User not found"));
+        UserDto userDto = service.findUserById(id).orElseThrow(() -> new EntityNotFoundException("User not found"));
         return userDto;
     }
 
     @PostMapping
     public UserDto saveUser(@RequestBody UserDto user) {
         if (user.getId() != null) {
-            throw new IllegalArgumentException(" == Created user shouldn't have id == ");
+            throw new IllegalArgumentException("=== Created user shouldn't have id");
         }
-        userService.save(user);
+        service.save(user);
         return user;
     }
 

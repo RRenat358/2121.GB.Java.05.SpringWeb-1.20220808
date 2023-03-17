@@ -20,7 +20,7 @@ public interface UserRepository extends JpaRepository<User, Long>, QuerydslPredi
     void deleteById(long id);
 */
 
-    List<User> findAllByUsernameLike(String usernameFilter, Pageable pageable);
+    Page<User> findAllByUsernameLike(String usernameFilter, Pageable pageable);
 
 
     @Query(value = """

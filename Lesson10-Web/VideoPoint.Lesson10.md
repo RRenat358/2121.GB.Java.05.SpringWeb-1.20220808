@@ -29,6 +29,8 @@ Lesson09-Spring-REST
 00-33-20 == создание проекта Angular через cmd   
 00-37-00 == пояснение по файлам проекта Angular Frontend     
 00-39-00 == add dependencies for Angular    
+00-44-00 == run    
+00-46-30 == app.component.html     
 
 
 

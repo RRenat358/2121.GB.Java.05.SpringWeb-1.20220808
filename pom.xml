@@ -29,6 +29,9 @@
         <module>Lesson09-REST</module>
         <module>Lesson10-SpringApp</module>
         <module>Lesson10-Web</module>
+
+
+        <module>lesson4-spring-boot</module>
     </modules>
 
     <dependencies>

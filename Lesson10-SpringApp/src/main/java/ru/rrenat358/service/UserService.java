@@ -1,21 +1,17 @@
 package ru.rrenat358.service;
+//import ru.rrenat358.model.QUser;
 
 
-import com.querydsl.core.BooleanBuilder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-//import ru.rrenat358.model.QUser;
 import ru.rrenat358.model.dto.UserDto;
 import ru.rrenat358.model.mapper.UserDtoMapper;
 import ru.rrenat358.repository.UserRepository;
 
-import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 @Service
 @RequiredArgsConstructor
@@ -52,15 +48,8 @@ public class UserService {
 */
 
     public Page<UserDto> findAllByFilter(String usernameFilter, String emailFilter, int page, int size, String sortField) {
-        usernameFilter =
-                usernameFilter == null || usernameFilter.isBlank()
-                        ? null
-                        : "%" + usernameFilter.trim() + "%";
-        emailFilter =
-                emailFilter == null || emailFilter.isBlank()
-                        ? null
-                        : "%" + emailFilter.trim() + "%";
-
+        usernameFilter = usernameFilter == null || usernameFilter.isBlank() ? null : "%" + usernameFilter.trim() + "%";
+        emailFilter = emailFilter == null || emailFilter.isBlank() ? null : "%" + emailFilter.trim() + "%";
         return userRepository.usersByFilter(usernameFilter, emailFilter, PageRequest.of(page, size, Sort.by(sortField)))
                 .map(mapper::map);
     }

@@ -27,12 +27,11 @@ public class UserResource {
             @RequestParam(required = false) Optional<Integer> size,
             @RequestParam(required = false) Optional<String> sortField
     ) {
-        log.info("=== HERE WE ARE");
+        log.info("HERE WE ARE");
         Integer pageValue = page.orElse(1) - 1;
         Integer sizeValue = size.orElse(3);
         String sortFieldValue = sortField.filter(s -> !s.isBlank()).orElse("id");
         Page<UserDto> allByFilter = service.findAllByFilter(usernameFilter, emailFilter, pageValue, sizeValue, sortFieldValue);
-        log.info("user: {}", allByFilter);
         return allByFilter;
     }
 
@@ -45,7 +44,7 @@ public class UserResource {
     @PostMapping
     public UserDto saveUser(@RequestBody UserDto user) {
         if (user.getId() != null) {
-            throw new IllegalArgumentException("=== Created user shouldn't have id");
+            throw new IllegalArgumentException("Created user shouldn't have id");
         }
         service.save(user);
         return user;

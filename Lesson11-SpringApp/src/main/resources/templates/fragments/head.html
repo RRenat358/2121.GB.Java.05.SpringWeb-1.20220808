@@ -1,4 +1,7 @@
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
 
 <head th:fragment="head">
     <!-- Required meta tags -->
@@ -26,8 +29,20 @@
                 <a class="nav-link" href="#">List</a>
             </li>
         </ul>
-    </div>
-</nav>
 
+        <form sec:authorize="isAuthenticated()"
+              th:action="@{/logout}"
+              th:method="post"
+              class="form-inline my-2 my-lg-0"
+        >
+            <button class="btn btn-outline-success my-2 my-sm-0">
+                Logout <span sec:authentication="principal.username"></span>
+            </button>
+
+        </form>
+    </div>
+
+
+</nav>
 
 </html>

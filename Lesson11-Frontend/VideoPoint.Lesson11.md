@@ -32,7 +32,8 @@ Lesson10-SpringApp-REST-part2
 01-20-00 == SecurityConfiguration  
 01-30-00 == хеширование  
 01-42-00 == mapper  
-01-30-00 == хеширование  
+01-53-00 == thymeleaf-extras-springsecurity5  
+01-56-00 == homeWork11
 
 
 

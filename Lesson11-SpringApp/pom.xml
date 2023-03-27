@@ -5,13 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
 
-
     <groupId>ru.rrenat358</groupId>
     <artifactId>Lesson11-SpringApp</artifactId>
     <name>Lesson11-SpringApp</name>
     <description>Lesson11-SpringApp</description>
     <version>0.0.1-SNAPSHOT</version>
-
 
 
     <parent>
@@ -44,10 +42,10 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.boot</groupId>-->
-        <!--            <artifactId>spring-boot-starter-security</artifactId>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>

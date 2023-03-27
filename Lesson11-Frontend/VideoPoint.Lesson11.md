@@ -22,9 +22,12 @@ Lesson10-SpringApp-REST-part2
 00-10-00 == run  
 00-14-00 == user-service.component.ts  
 00-18-00 == user-form.component.ts  
-00-25-50 == save()  
-00-33-00 == alert  
-00-49-30 == api  
+00-25-50 == save()   
+00-33-00 == alert   
+00-49-30 == api  springdoc-openapi-ui   swagger-ui  
+00-59-00 == Security  
+01-02-00 == cookie  
+01-09-00 == перерыв  
 
 
 

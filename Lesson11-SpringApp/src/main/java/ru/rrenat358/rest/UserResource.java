@@ -34,7 +34,7 @@ public class UserResource {
         Page<UserDto> allByFilter = service.findAllByFilter(usernameFilter, emailFilter, pageValue, sizeValue, sortFieldValue);
         return allByFilter;
     }
-
+/*
     @GetMapping("/{id}id")
     public UserDto form(@PathVariable("id") long id, Model model) {
         UserDto userDto = service.findUserById(id).orElseThrow(() -> new EntityNotFoundException("User not found"));
@@ -43,6 +43,31 @@ public class UserResource {
 
 //    @PostMapping
     @PutMapping
+    public UserDto saveUser(@RequestBody UserDto user) {
+        if (user.getId() != null) {
+            throw new IllegalArgumentException("Created user shouldn't have id");
+        }
+        service.save(user);
+        return user;
+    }
+*/
+
+    @GetMapping("/{id}/id")
+    public UserDto form(@PathVariable("id") long id, Model model) {
+        return service.findUserById(id).orElseThrow(() -> new EntityNotFoundException("User not found"));
+    }
+
+    @PutMapping
+    public UserDto updateUser(@RequestBody UserDto user) {
+        try {
+            service.save(user);
+        } catch (RuntimeException e) {
+            System.out.println("e.getMessage() = " + e.getMessage());
+        }
+        return user;
+    }
+
+    @PostMapping
     public UserDto saveUser(@RequestBody UserDto user) {
         if (user.getId() != null) {
             throw new IllegalArgumentException("Created user shouldn't have id");

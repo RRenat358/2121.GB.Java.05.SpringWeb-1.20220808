@@ -2,6 +2,7 @@ package ru.rrenat358.model.mapper;
 
 import org.mapstruct.*;
 //import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import ru.rrenat358.model.User;
 import ru.rrenat358.model.dto.UserDto;
 
@@ -12,12 +13,12 @@ public interface UserDtoMapper {
     UserDto map(User user);
 
     @Mapping(target = "id", ignore = true)
-//    @Mapping(source = "password", target = "password"/*, qualifiedByName = "encode"*/)
-    User map(UserDto dto/*, @Context PasswordEncoder encoder*/);
+    @Mapping(source = "password", target = "password", qualifiedByName = "encode")
+    User map(UserDto dto, @Context PasswordEncoder encoder);
 
-//    @Named("encode")
-//    default String encode(String password, @Context PasswordEncoder encoder) {
-//        return encoder.encode(password);
-//    }
+    @Named("encode")
+    default String encode(String password, @Context PasswordEncoder encoder) {
+        return encoder.encode(password);
+    }
 
 }

@@ -27,7 +27,13 @@ Lesson10-SpringApp-REST-part2
 00-49-30 == api  springdoc-openapi-ui   swagger-ui  
 00-59-00 == Security  
 01-02-00 == cookie  
-01-09-00 == перерыв  
+01-09-00 == перерыв   
+01-20-00 == перерыв конец   
+01-20-00 == SecurityConfiguration  
+01-30-00 == хеширование  
+01-42-00 == mapper  
+01-30-00 == хеширование  
+
 
 
 

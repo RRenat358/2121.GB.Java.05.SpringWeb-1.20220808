@@ -41,7 +41,8 @@ public class UserResource {
         return userDto;
     }
 
-    @PostMapping
+//    @PostMapping
+    @PutMapping
     public UserDto saveUser(@RequestBody UserDto user) {
         if (user.getId() != null) {
             throw new IllegalArgumentException("Created user shouldn't have id");

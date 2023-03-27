@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {User} from "../model/user";
+import {Component, OnInit} from '@angular/core';
 import {UserServiceComponent} from "../user-service/user-service.component";
+import {User} from "../model/user";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
@@ -13,7 +13,6 @@ export class UserFormComponent implements OnInit {
   user = new User(null, "", "", "");
   error = false;
   errorMessage = "";
-
 
   constructor(private userService: UserServiceComponent,
               private route: ActivatedRoute,
@@ -35,4 +34,17 @@ export class UserFormComponent implements OnInit {
     })
   }
 
+  save() {
+    this.userService.save(this.user)
+      .subscribe(res => {
+        console.log(res)
+        this.router.navigateByUrl('/user')
+        this.error = false;
+        this.errorMessage = "";
+      }, err => {
+        console.log(err);
+        this.error = true;
+        this.errorMessage = err.error;
+      })
+  }
 }

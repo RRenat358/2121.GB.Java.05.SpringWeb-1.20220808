@@ -1,11 +1,29 @@
 <div class="row py-2">
   <div class="col-12">
-    <form action="#" method="post">
-      <input type="hidden" id="id" name="id">
+    <div *ngIf="error" class="alert alert-danger" role="alert">
+      {{errorMessage}}
+    </div>
+
+    <form (ngSubmit)="save()">
+
       <div class="form-group">
         <label>Username</label>
-        <input type="text" class="form-control" id="name" name="username" placeholder="Enter username">
+        <input [(ngModel)]="user.username" type="text" class="form-control" id="username" name="username"
+               placeholder="Enter username">
       </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input [(ngModel)]="user.email" type="email" class="form-control" id="email" name="email"
+               placeholder="Enter email">
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input [(ngModel)]="user.password" type="password" class="form-control" id="password" name="password"
+               placeholder="Enter password">
+      </div>
+
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </div>

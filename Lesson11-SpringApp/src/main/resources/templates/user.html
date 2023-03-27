@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/head.html :: head">
+
+</head>
+
+<body>
+
+<nav th:replace="fragments/head.html :: navigation">
+
+</nav>
+
+<div class="container">
+    <div class="row py-2">
+        <div class="col-12">
+            <a class="btn btn-primary" th:href="@{/user/new}">Add User</a>
+        </div>
+
+        <div class="col-12 mt-3">
+            <form class="form-inline">
+                <div class="form-group mb-2 mr-2">
+                    <label for="usernameFilter" class="sr-only">Username filter</label>
+                    <input type="text" class="form-control" id="usernameFilter"
+                           name="usernameFilter" placeholder="Username filter" th:value="${param.usernameFilter}">
+                </div>
+
+                <button type="submit" class="btn btn-primary mb-2">Apply</button>
+            </form>
+        </div>
+
+        <div class="col-12 mt-3">
+            <form class="form-inline">
+                <div class="form-group mb-2 mr-2">
+                    <label for="emailFilter" class="sr-only">Email filter</label>
+                    <input type="text" class="form-control" id="emailFilter"
+                           name="emailFilter" placeholder="Email filter" th:value="${param.emailFilter}">
+                </div>
+
+                <button type="submit" class="btn btn-primary mb-2">Apply</button>
+            </form>
+        </div>
+
+        <div class="col-12">
+            <table class="table table-bordered my-2">
+                <thead>
+                <tr>
+                    <th th:replace="fragments/sort_header.html :: sort_header('Id', 'id')"></th>
+                    <th th:replace="fragments/sort_header.html :: sort_header('Username', 'username')"></th>
+                    <th th:replace="fragments/sort_header.html :: sort_header('Email', 'email')"></th>
+                    <th scope="col">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="user : ${users}">
+                    <th scope="row" th:text="${user.id}">1</th>
+                    <td th:text="${user.username}">Alex</td>
+                    <td th:text="${user.email}">some@mail.com</td>
+                    <td>
+                        <a class="btn btn-success" th:href="@{/user/{id}(id = ${user.id})}"><i class="fas fa-edit"></i></a>
+                        <form class="d-inline" th:method="delete" th:action="@{/user/{id}/(id = ${user.id})}">
+                            <button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div th:unless="${users.isEmpty()}" class="col-12">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+
+                    <li class="page-item" th:classappend="${users.isFirst()} ? 'disabled'">
+                        <a class="page-link"
+                           th:href="@{/user(page=${users.number}, size=${users.size})}">
+                            Previous
+                        </a>
+                    </li>
+
+                    <li th:each="num : ${#numbers.sequence(1, users.totalPages)}"
+                        th:classappend="${num == users.number + 1} ? 'active'"
+                        class="page-item">
+                        <a class="page-link" th:href="@{/user(page=${num}, size=${users.size})}">[[${num}]]
+                            <span th:if="${num == users.number + 1}" class="sr-only">(current)</span>
+                        </a>
+                    </li>
+
+                    <li class="page-item" th:classappend="${users.isLast()} ? 'disabled'">
+                        <a class="page-link"
+                           th:href="@{/user(page=${users.number + 2}, size=${users.size})}">
+                            Next
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<th:block th:replace="fragments/footer.html :: scripts"></th:block>
+</body>
+</html>

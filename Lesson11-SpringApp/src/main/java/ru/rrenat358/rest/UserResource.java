@@ -35,7 +35,7 @@ public class UserResource {
         return allByFilter;
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{id}id")
     public UserDto form(@PathVariable("id") long id, Model model) {
         UserDto userDto = service.findUserById(id).orElseThrow(() -> new EntityNotFoundException("User not found"));
         return userDto;

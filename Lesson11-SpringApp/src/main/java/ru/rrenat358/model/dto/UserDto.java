@@ -1,4 +1,4 @@
-package ru.titov.model.dto;
+package ru.rrenat358.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;

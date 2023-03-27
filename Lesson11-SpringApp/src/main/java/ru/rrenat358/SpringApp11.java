@@ -1,4 +1,4 @@
-package ru.titov;
+package ru.rrenat358;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,7 +7,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
-public class Lesson4SpringBootApplication {
+public class SpringApp11 {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -15,7 +15,7 @@ public class Lesson4SpringBootApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(Lesson4SpringBootApplication.class, args);
+        SpringApplication.run(SpringApp11.class, args);
     }
 
 }

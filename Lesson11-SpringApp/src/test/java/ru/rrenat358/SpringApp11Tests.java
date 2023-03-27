@@ -1,10 +1,10 @@
-package ru.titov;
+package ru.rrenat358;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Lesson4SpringBootApplicationTests {
+class SpringApp11Tests {
 
     @Test
     void contextLoads() {

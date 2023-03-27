@@ -1,4 +1,4 @@
-package ru.titov.rest;
+package ru.rrenat358.rest;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import ru.titov.exceptions.EntityNotFoundException;
-import ru.titov.model.dto.UserDto;
-import ru.titov.service.UserService;
+import ru.rrenat358.exceptions.EntityNotFoundException;
+import ru.rrenat358.model.dto.UserDto;
+import ru.rrenat358.service.UserService;
 
 import java.util.Optional;
 

@@ -1,4 +1,4 @@
-package ru.titov.service;
+package ru.rrenat358.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -8,9 +8,9 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import ru.titov.model.dto.UserDto;
-import ru.titov.model.mapper.UserDtoMapper;
-import ru.titov.repository.UserRepository;
+import ru.rrenat358.model.dto.UserDto;
+import ru.rrenat358.model.mapper.UserDtoMapper;
+import ru.rrenat358.repository.UserRepository;
 
 import java.util.Collections;
 import java.util.Optional;

@@ -1,4 +1,4 @@
-package ru.titov.controller;
+package ru.rrenat358.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;

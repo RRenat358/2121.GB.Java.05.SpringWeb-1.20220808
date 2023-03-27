@@ -1,4 +1,4 @@
-package ru.titov.exceptions;
+package ru.rrenat358.exceptions;
 
 public class EntityNotFoundException extends RuntimeException {
 

@@ -1,4 +1,4 @@
-package ru.titov.model;
+package ru.rrenat358.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

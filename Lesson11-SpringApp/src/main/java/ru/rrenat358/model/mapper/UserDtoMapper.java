@@ -1,4 +1,4 @@
-package ru.titov.model.mapper;
+package ru.rrenat358.model.mapper;
 
 import org.mapstruct.Context;
 import org.mapstruct.Mapper;
@@ -6,8 +6,8 @@ import org.mapstruct.Mapping;
 import org.mapstruct.Named;
 import org.mapstruct.NullValueCheckStrategy;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import ru.titov.model.User;
-import ru.titov.model.dto.UserDto;
+import ru.rrenat358.model.User;
+import ru.rrenat358.model.dto.UserDto;
 
 @Mapper(componentModel = "spring", nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
 public interface UserDtoMapper {

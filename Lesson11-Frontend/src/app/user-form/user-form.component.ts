@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {User} from "../model/user";
 
 @Component({
   selector: 'app-user-form',
@@ -6,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-form.component.scss']
 })
 export class UserFormComponent implements OnInit {
+
+  user = new User(null, "", "", "");
+  error = false;
+  errorMessage = "";
+
 
   constructor() { }
 

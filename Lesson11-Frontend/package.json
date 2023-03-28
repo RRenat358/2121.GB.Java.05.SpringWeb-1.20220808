@@ -10,6 +10,7 @@
   },
   "private": true,
   "dependencies": {
+    "@popperjs/core": "^2.11.7",
     "@angular/animations": "^15.2.0",
     "@angular/common": "^15.2.0",
     "@angular/compiler": "^15.2.0",

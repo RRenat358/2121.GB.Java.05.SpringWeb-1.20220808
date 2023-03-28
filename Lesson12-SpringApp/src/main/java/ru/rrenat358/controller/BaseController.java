@@ -13,8 +13,8 @@ public class BaseController {
         return "main";
     }
 
-    @GetMapping("/access_denied")
-    public String accessDeniedPage() {
-        return "access_denied";
-    }
+//    @GetMapping("/access_denied")
+//    public String accessDeniedPage() {
+//        return "access_denied";
+//    }
 }

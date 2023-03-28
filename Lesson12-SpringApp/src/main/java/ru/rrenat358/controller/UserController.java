@@ -77,6 +77,7 @@ public class UserController {
 
     @GetMapping("/new")
     public String addNewUser(Model model) {
+        model.addAttribute("roles", roleService.findAll());
         model.addAttribute("user", new UserDto());
         return "user_form";
     }

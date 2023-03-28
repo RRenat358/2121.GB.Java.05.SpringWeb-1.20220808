@@ -32,6 +32,10 @@ Lesson11-SpringApp-Security
 00-32-00 == debuging  
 00-37-25 == авторизация приложения, статич.класс  
 00-41-00 == WebSecurityConfigurerAdapter configure(HttpSecurity http) http.antMatcher  
+00-42-00 == поиск метода  
+00-47-50 == удаление папки maven .m2  
+00-49-00 == ответы на вопросы  
+00-52-00 == продолжение  
 
 
 

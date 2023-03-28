@@ -1,5 +1,5 @@
 {
-  "name": "lesson10-frontend",
+  "name": "lesson11-frontend",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -10,6 +10,7 @@
   },
   "private": true,
   "dependencies": {
+    "@popperjs/core": "^2.11.7",
     "@angular/animations": "^15.2.0",
     "@angular/common": "^15.2.0",
     "@angular/compiler": "^15.2.0",
@@ -18,7 +19,6 @@
     "@angular/platform-browser": "^15.2.0",
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
-    "@popperjs/core": "^2.11.7",
     "bootstrap": "^4.3.1",
     "jquery": "^3.6.0",
     "@fortawesome/fontawesome-free": "^5.3.1",

@@ -1,4 +1,4 @@
-package ru.rrenat358.contoller;
+package ru.rrenat358.controller;
 
 //import jakarta.validation.Valid;
 
@@ -15,7 +15,6 @@ import ru.rrenat358.service.UserService;
 
 import javax.validation.Valid;
 import java.util.Optional;
-
 
 @Slf4j
 @Controller

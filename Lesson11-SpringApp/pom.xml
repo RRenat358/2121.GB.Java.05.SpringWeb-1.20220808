@@ -31,11 +31,11 @@
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
 
-                <dependency>
-                    <groupId>org.thymeleaf.extras</groupId>
-                    <artifactId>thymeleaf-extras-springsecurity5</artifactId>
-                    <version>3.0.4.RELEASE</version>
-                </dependency>
+        <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-springsecurity5</artifactId>
+            <version>3.0.4.RELEASE</version>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -172,13 +172,12 @@
                             <goal>process</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>${basedir}/target/generated-sources/java</outputDirectory>
+                            <outputDirectory>target/generated-sources/java</outputDirectory>
                             <processor>com.querydsl.apt.jpa.JPAAnnotationProcessor</processor>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -199,7 +198,6 @@
                     </annotationProcessorPaths>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 

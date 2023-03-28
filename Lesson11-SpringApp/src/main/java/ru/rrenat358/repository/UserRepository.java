@@ -8,8 +8,6 @@ import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.stereotype.Repository;
 import ru.rrenat358.model.User;
 
-
-import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -22,7 +20,6 @@ public interface UserRepository extends JpaRepository<User, Long>, QuerydslPredi
 */
 
     Page<User> findAllByUsernameLike(String usernameFilter, Pageable pageable);
-
 
     @Query(value = """
             select * from users u

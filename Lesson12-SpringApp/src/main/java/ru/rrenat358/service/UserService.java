@@ -76,7 +76,7 @@ public class UserService {
                 .map(user -> new org.springframework.security.core.userdetails.User(
                         user.getUsername(),
                         user.getPassword(),
-                        Collections.singletonList(new SimpleGrantedAuthority("ADMIN"))
+                        Collections.singletonList(new SimpleGrantedAuthority("ROLE_ADMIN"))
                 )).orElseThrow(() -> new UsernameNotFoundException(username));
 
     }

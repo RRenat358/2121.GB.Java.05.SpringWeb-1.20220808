@@ -5,10 +5,12 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import ru.rrenat358.model.Role;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -26,11 +28,13 @@ public class UserDto {
     @Email
     private String email;
 
-    @Pattern(regexp = "^(?=.*?[0-9])(?=.*?[A-Z]).{8,}$", message = "Password too simple")
+//    @Pattern(regexp = "^(?=.*?[0-9])(?=.*?[A-Z]).{8,}$", message = "Password too simple")
     private String password;
 
     @JsonIgnore
     private String matchingPassword;
+
+    private Set<Role> roles;
 
     public UserDto(Long id, String username, String email, String password) {
         this.id = id;

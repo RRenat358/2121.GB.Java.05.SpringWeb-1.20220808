@@ -31,6 +31,7 @@ Lesson11-SpringApp-Security
 00-30-00 == run  
 00-32-00 == debuging  
 00-37-25 == авторизация приложения, статич.класс  
+00-41-00 == WebSecurityConfigurerAdapter configure(HttpSecurity http) http.antMatcher  
 
 
 

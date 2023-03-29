@@ -31,6 +31,7 @@
         <module>Lesson10-Web</module>
         <module>Lesson11-SpringApp</module>
         <module>Lesson12-SpringApp</module>
+        <module>MyWorkModule-20230329</module>
     </modules>
 
     <dependencies>

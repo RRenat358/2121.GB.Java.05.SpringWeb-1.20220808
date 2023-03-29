@@ -5,6 +5,7 @@ package ru.rrenat358.controller;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -82,12 +83,16 @@ public class UserController {
         return "user_form";
     }
 
+//    @PreAuthorize("isAuthenticated()", "isAnonymous()")
+//    @PostAuthorize()
+//    @Secured("ROLE_SUPER_ADMIN")
     @DeleteMapping("{id}")
     public String deleteUserById(@PathVariable long id) {
         userService.deleteUserById(id);
         return "redirect:/user";
     }
 
+    @Secured("ROLE_ADMIN")
     @PostMapping
     public String saveUser(@Valid @ModelAttribute("user") UserDto user, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {

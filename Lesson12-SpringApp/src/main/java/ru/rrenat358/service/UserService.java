@@ -16,6 +16,7 @@ import ru.rrenat358.repository.UserRepository;
 
 import java.util.Collections;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -76,9 +77,10 @@ public class UserService {
                 .map(user -> new org.springframework.security.core.userdetails.User(
                         user.getUsername(),
                         user.getPassword(),
-                        Collections.singletonList(new SimpleGrantedAuthority("ROLE_ADMIN"))
+                        user.getRoles().stream()
+                                .map(role -> new SimpleGrantedAuthority(role.getName()))
+                                .collect(Collectors.toList())
                 )).orElseThrow(() -> new UsernameNotFoundException(username));
-
     }
 
 }

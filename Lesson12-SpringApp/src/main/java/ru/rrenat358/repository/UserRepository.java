@@ -34,6 +34,12 @@ public interface UserRepository extends JpaRepository<User, Long>, QuerydslPredi
             nativeQuery = true)
     Page<User> usersByFilter(String usernameFilter, String emailFilter, Pageable pageable);
 
+    @Query(""" 
+            select u 
+            from User u 
+            join fetch u.roles
+            where u.username = :username
+            """)
     Optional<User> findByUsername(String username);
 
 }
